@@ -43,7 +43,7 @@
             android:windowSoftInputMode="stateHidden|adjustPan" />
         <activity
             android:name=".activity.exercise.ExerciseAddActivity"
-            android:configChanges="locale|keyboard|keyboardHidden|orientation"
+           android:configChanges="locale|keyboard|keyboardHidden|orientation|screenSize"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".activity.exercise.ExerciseConfigureActivity"
@@ -81,6 +81,18 @@
             android:configChanges="locale|keyboard|keyboardHidden|orientation"
             android:screenOrientation="nosensor"
             android:windowSoftInputMode="stateHidden|adjustPan" />
+         <activity
+            android:name="com.cashman.physio.v1.android.alarm.activity.profile.AppointmentAlarmActivity"
+            android:configChanges="locale|keyboard|keyboardHidden|orientation"
+            android:screenOrientation="nosensor"
+            android:windowSoftInputMode="stateHidden|adjustPan"
+             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+         <activity
+            android:name="com.cashman.physio.v1.android.alarm.activity.exercise.PlayVedioActivity"
+            android:configChanges="locale|keyboard|keyboardHidden|orientation"
+            android:screenOrientation="nosensor"
+            android:windowSoftInputMode="stateHidden|adjustPan"
+             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
          <activity
             android:name=".activity.about.AboutUsActivity"
             android:configChanges="locale|keyboard|keyboardHidden|orientation" />

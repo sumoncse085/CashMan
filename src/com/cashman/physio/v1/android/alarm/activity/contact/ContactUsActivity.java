@@ -32,8 +32,7 @@ public class ContactUsActivity extends Activity {
 	}
 	
 	 private static final String TAG = "ContactActivity";
-
-	  private TextView mTextView_Phone;
+	 private TextView mTextView_Phone;
 	  private TextView mTextView_tvinfo;
 	  private TextView mTextView_ViewMap;
 	  private TextView mTextView_ViewMap2;
@@ -113,7 +112,7 @@ public class ContactUsActivity extends Activity {
 	      {
 	  		Intent localIntent = new Intent("android.intent.action.SEND");
 	  		String[] arrayOfString = new String[1];
-	  		arrayOfString[0] = "info@www.cashmanphysio.co.nz";
+	  		arrayOfString[0] = "info@cashmanphysio.co.nz";
 	  		localIntent.putExtra("android.intent.extra.EMAIL", arrayOfString);
 	  		localIntent.putExtra("android.intent.extra.SUBJECT", "Cashman Physiotherapy");
 	  		localIntent.putExtra("android.intent.extra.TEXT", "");

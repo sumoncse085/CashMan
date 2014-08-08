@@ -42,9 +42,7 @@ public class AlarmTool {
 				return;
 			}
 			long ringTime = AlarmComparator.getRingTimeLong(alarm.getRingTime(),alarm.getWeekday());
-			LocalLog.i(TAG, "start","ringTime = "+alarm.getRingTime());
 			AlarmManager manager = (AlarmManager) mContext.getSystemService(Context.ALARM_SERVICE);
-			
 			Intent intent = new Intent(mContext,AlarmReceiver.class);
 //			intent.putExtra(Constant.Alarm.Intent.KEY_RING_TIME, ringTime);
 //			intent.putExtra(Constant.Alarm.Intent.KEY_ALARM_NAME, alarm.getName());

@@ -1,15 +1,12 @@
 package com.cashman.physio.v1.android.alarm.activity.contact;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ZoomButtonsController;
-
 import com.cashman.physio.v1.android.alarm.R;
 import com.cashman.physio.v1.android.alarm.data.Constant;
 import com.cashman.physio.v1.android.alarm.util.LocalLog;
@@ -20,7 +17,6 @@ import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
 import com.google.android.maps.OverlayItem;
-
 public class ViewMapActivity extends MapActivity
 {
   private static final String TAG = "ViewMapActivity";
@@ -29,7 +25,6 @@ public class ViewMapActivity extends MapActivity
   private String mSnippetPoint = "";
   private String mTitlePoint = "";
   private MapView mapView;
-
   private void initViews()
   {
     this.mapView = ((MapView)findViewById(R.id.mapview));

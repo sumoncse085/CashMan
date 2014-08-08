@@ -3,11 +3,14 @@ package com.cashman.physio.v1.android.alarm.activity.profile;
 import java.sql.Driver;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import android.app.Activity;
+import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.app.TimePickerDialog.OnTimeSetListener;
 import android.content.DialogInterface;
@@ -30,6 +33,7 @@ import android.widget.Toast;
 
 import com.cashman.physio.v1.android.alarm.R;
 import com.cashman.physio.v1.android.alarm.data.Constant;
+import com.cashman.physio.v1.android.alarm.receiver.AlarmReceiver;
 import com.cashman.physio.v1.android.alarm.util.LocalLog;
 import com.cashman.physio.v1.android.alarm.util.PreferencesTool;
 import com.cashman.physio.v1.android.alarm.util.ProfileNotify;
@@ -79,7 +83,7 @@ public class ProfileActivity extends Activity implements View.OnClickListener, O
 		this.mArray_Location = localResources
 				.getStringArray(R.array.location_list);
 		this.mArray_Role = localResources.getStringArray(R.array.role_list);
-//		this.mTvList_Location.setText(initTextView(FLAG_LOCATION));
+		//		this.mTvList_Location.setText(initTextView(FLAG_LOCATION));
 		this.mTvList_Role_1.setText(initTextView(FLAG_ROLE_1));
 		this.mTvList_Role_2.setText(initTextView(FLAG_ROLE_2));
 		this.mTvList_Role_3.setText(initTextView(FLAG_ROLE_3));
@@ -90,9 +94,9 @@ public class ProfileActivity extends Activity implements View.OnClickListener, O
 		this.mTvList_Name_4.setText(initTextView(FLAG_NAME_4));
 		this.mTextView_Due.setText(initTextView(FLAG_DUE));
 		this.mTextView_Goals.setText(initTextView(FLAG_GOALS));
-		
-//		this.mTextView_NextAppoint.setText(initTextView(FLAG_NEXT_APPOINT));
-		
+
+		//		this.mTextView_NextAppoint.setText(initTextView(FLAG_NEXT_APPOINT));
+
 		String str8 = getPreferences(Constant.Profile.KEY_FIXED_NEXT_APPOINT);
 		if (str8.length() > 0){
 			int i = str8.indexOf(Constant.Profile.DATE_AND_TIME_SEPARATOR);
@@ -105,73 +109,73 @@ public class ProfileActivity extends Activity implements View.OnClickListener, O
 			mButton_NextAppointmentDate.setText(str.substring(0,i));
 			mButton_NextAppointmentTime.setText(str.substring(i + 1));
 		}
-		
-	boolean is_check  = getSharedPreferences(
+
+		boolean is_check  = getSharedPreferences(
 				Constant.SharePreferences.KEY_PROFILE_PREFERENCES_NAME, 0).getBoolean(Constant.SharePreferences.KEY_NOTIFY_IS_CHECK, false);
-      this.isCheck_before_notify.setChecked(is_check);
-	//  SimpleDateFormat df2 = new SimpleDateFormat(Constant.Profile.DATE_TIME_PATTERN );
-      //saveToPreferences(Constant.SharePreferences.KEY_FIXED_NEXT_APPOINT, df2.format(new Date()));
-     
+		this.isCheck_before_notify.setChecked(is_check);
+		//  SimpleDateFormat df2 = new SimpleDateFormat(Constant.Profile.DATE_TIME_PATTERN );
+		//saveToPreferences(Constant.SharePreferences.KEY_FIXED_NEXT_APPOINT, df2.format(new Date()));
+
 	}
 
 	private String initTextView(int flag)
-  {
-    String str = "";
-    switch (flag)
-    {
-    default:
-     
-    case FLAG_ROLE_1:
-    	str = getPreferences(Constant.SharePreferences.KEY_ROLE_1);
-    	break;
-    case FLAG_ROLE_2:
-    	str = getPreferences(Constant.SharePreferences.KEY_ROLE_2);
-    	break;
-    case FLAG_ROLE_3:
-    	str = getPreferences(Constant.SharePreferences.KEY_ROLE_3);
-    	break;
-    case FLAG_ROLE_4:
-    	str = getPreferences(Constant.SharePreferences.KEY_ROLE_4);
-    	break;
-    case FLAG_LOCATION:
-    	str = getPreferences(Constant.SharePreferences.KEY_LOCATION);
-    	break;
-    case FLAG_NAME_1:
-    	str = getPreferences(Constant.SharePreferences.KEY_NAME_1);
-    	break;
-    case FLAG_NAME_2:
-    	str = getPreferences(Constant.SharePreferences.KEY_NAME_2);
-    	break;
-    case FLAG_NAME_3:
-    	str = getPreferences(Constant.SharePreferences.KEY_NAME_3);
-    	break;
-    case FLAG_NAME_4:
-    	str = getPreferences(Constant.SharePreferences.KEY_NAME_4);
-    	break;
-    case FLAG_NEXT_APPOINT:
-    	str = getPreferences(Constant.SharePreferences.KEY_NEXT_APPOINT);
-    	break;
-    case FLAG_GOALS:
-        str = getPreferences(Constant.SharePreferences.KEY_GOALS);
-        break;
-    case FLAG_DUE:
-    	 str = getPreferences(Constant.SharePreferences.KEY_DUE);
-    	 break;
-    }
-    if(str == null || str.length() <= 0){
-    	if(flag != FLAG_DUE && flag != FLAG_GOALS && flag != FLAG_NEXT_APPOINT){
-        	str = getString(R.string.please_select);
-        }else{
-        	str = getString(R.string.none);
-        }
-    }
-    
-    
-    return str;
-  }
+	{
+		String str = "";
+		switch (flag)
+		{
+		default:
+
+		case FLAG_ROLE_1:
+			str = getPreferences(Constant.SharePreferences.KEY_ROLE_1);
+			break;
+		case FLAG_ROLE_2:
+			str = getPreferences(Constant.SharePreferences.KEY_ROLE_2);
+			break;
+		case FLAG_ROLE_3:
+			str = getPreferences(Constant.SharePreferences.KEY_ROLE_3);
+			break;
+		case FLAG_ROLE_4:
+			str = getPreferences(Constant.SharePreferences.KEY_ROLE_4);
+			break;
+		case FLAG_LOCATION:
+			str = getPreferences(Constant.SharePreferences.KEY_LOCATION);
+			break;
+		case FLAG_NAME_1:
+			str = getPreferences(Constant.SharePreferences.KEY_NAME_1);
+			break;
+		case FLAG_NAME_2:
+			str = getPreferences(Constant.SharePreferences.KEY_NAME_2);
+			break;
+		case FLAG_NAME_3:
+			str = getPreferences(Constant.SharePreferences.KEY_NAME_3);
+			break;
+		case FLAG_NAME_4:
+			str = getPreferences(Constant.SharePreferences.KEY_NAME_4);
+			break;
+		case FLAG_NEXT_APPOINT:
+			str = getPreferences(Constant.SharePreferences.KEY_NEXT_APPOINT);
+			break;
+		case FLAG_GOALS:
+			str = getPreferences(Constant.SharePreferences.KEY_GOALS);
+			break;
+		case FLAG_DUE:
+			str = getPreferences(Constant.SharePreferences.KEY_DUE);
+			break;
+		}
+		if(str == null || str.length() <= 0){
+			if(flag != FLAG_DUE && flag != FLAG_GOALS && flag != FLAG_NEXT_APPOINT){
+				str = getString(R.string.please_select);
+			}else{
+				str = getString(R.string.none);
+			}
+		}
+
+
+		return str;
+	}
 
 	private void initViews() {
-//		this.mTvList_Location = ((TextView) findViewById(R.id.tv_location_list));
+		//		this.mTvList_Location = ((TextView) findViewById(R.id.tv_location_list));
 		this.mTvList_Role_1 = ((TextView) findViewById(R.id.tv_role_list_1));
 		this.mTvList_Name_1 = ((TextView) findViewById(R.id.tv_name_list_1));
 		this.mTvList_Role_2 = ((TextView) findViewById(R.id.tv_role_list_2));
@@ -180,16 +184,16 @@ public class ProfileActivity extends Activity implements View.OnClickListener, O
 		this.mTvList_Name_3 = ((TextView) findViewById(R.id.tv_name_list_3));
 		this.mTvList_Role_4 = ((TextView) findViewById(R.id.tv_role_list_4));
 		this.mTvList_Name_4 = ((TextView) findViewById(R.id.tv_name_list_4));
-//		this.mLinear_NextAppoint = ((LinearLayout) findViewById(R.id.linear_next_appoint));
+		//		this.mLinear_NextAppoint = ((LinearLayout) findViewById(R.id.linear_next_appoint));
 		this.mLinear_Goals = ((LinearLayout) findViewById(R.id.linear_goals));
 		this.mLinear_Due = ((LinearLayout) findViewById(R.id.linear_due_time));
-//		this.mTextView_NextAppoint = ((TextView) findViewById(R.id.tv_next_appoint));
+		//		this.mTextView_NextAppoint = ((TextView) findViewById(R.id.tv_next_appoint));
 		this.mTextView_Goals = ((TextView) findViewById(R.id.tv_goals));
 		this.mTextView_Due = ((TextView) findViewById(R.id.tv_due));
 		mButton_NextAppointmentDate = (Button) findViewById(R.id.btn_next_appoint_date);
 		mButton_NextAppointmentTime = (Button) findViewById(R.id.btn_next_appoint_time);
 		this.isCheck_before_notify = (CheckBox)ProfileActivity.this.findViewById(R.id.profile_is_before_notify);
-//		this.mTvList_Location.setOnClickListener(this);
+		//		this.mTvList_Location.setOnClickListener(this);
 		this.mTvList_Role_1.setOnClickListener(this);
 		this.mTvList_Name_1.setOnClickListener(this);
 		this.mTvList_Role_2.setOnClickListener(this);
@@ -199,13 +203,13 @@ public class ProfileActivity extends Activity implements View.OnClickListener, O
 		this.mTvList_Role_4.setOnClickListener(this);
 		this.mTvList_Name_4.setOnClickListener(this);
 		this.mLinear_Goals.setOnClickListener(this);
-//		this.mLinear_NextAppoint.setOnClickListener(this);
+		//		this.mLinear_NextAppoint.setOnClickListener(this);
 		this.mLinear_Due.setOnClickListener(this);
 		mButton_NextAppointmentDate.setOnClickListener(this);
 		mButton_NextAppointmentTime.setOnClickListener(this);
 		this.isCheck_before_notify.setOnCheckedChangeListener(this);
-		  TextView headTxt = (TextView)findViewById(R.id.head_nab_txt_title);
-		    headTxt.setText("My Profile");
+		TextView headTxt = (TextView)findViewById(R.id.head_nab_txt_title);
+		headTxt.setText("My Profile");
 		initData();
 	}
 
@@ -218,11 +222,11 @@ public class ProfileActivity extends Activity implements View.OnClickListener, O
 		SharedPreferences.Editor localEditor = getSharedPreferences(
 				Constant.SharePreferences.KEY_PROFILE_PREFERENCES_NAME, 0).edit();
 		localEditor.putString(paramString1, paramString2);
-		 
+
 		localEditor.commit();
 	}
-	
-	 
+
+
 
 	private void showDropdownList(final String[] paramArrayOfString,
 			int paramInt, final TextView paramTextView, final String paramString) {
@@ -236,14 +240,14 @@ public class ProfileActivity extends Activity implements View.OnClickListener, O
 		localBuilder.setTitle(str + paramTextView.getText().toString());
 		localBuilder.setItems(paramArrayOfString,
 				new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface paramDialogInterface,
-							int paramInt) {
-						String str = paramArrayOfString[paramInt];
-						paramTextView.setText(str);
-						ProfileActivity.this
-								.saveToPreferences(paramString, str);
-					}
-				});
+			public void onClick(DialogInterface paramDialogInterface,
+					int paramInt) {
+				String str = paramArrayOfString[paramInt];
+				paramTextView.setText(str);
+				ProfileActivity.this
+				.saveToPreferences(paramString, str);
+			}
+		});
 		localBuilder.create().show();
 
 	}
@@ -256,7 +260,7 @@ public class ProfileActivity extends Activity implements View.OnClickListener, O
 		localIntent.putExtra(Constant.Profile.KEY_NAME, paramString);
 		startActivityForResult(localIntent, paramInt);
 	}
-	
+
 	private void startActivityForResult(int flag) {
 		Class<?> targetClass = null;
 		Intent i = new Intent();
@@ -275,7 +279,7 @@ public class ProfileActivity extends Activity implements View.OnClickListener, O
 			break;
 		case FLAG_NEXT_APPOINT:
 			contentKey = Constant.Profile.KEY_NEXT_APPOINT;
-//			content = mTextView_NextAppoint.getText().toString().trim();
+			//			content = mTextView_NextAppoint.getText().toString().trim();
 			targetClass = NextAppointActivity.class;
 			break;
 		default:
@@ -319,7 +323,7 @@ public class ProfileActivity extends Activity implements View.OnClickListener, O
 				break;
 			case FLAG_NEXT_APPOINT:
 				str1 = data.getStringExtra(Constant.Profile.KEY_NEXT_APPOINT);
-//				localTextView = this.mTextView_NextAppoint;
+				//				localTextView = this.mTextView_NextAppoint;
 				str2 = Constant.SharePreferences.KEY_NEXT_APPOINT;
 				break;
 
@@ -340,12 +344,12 @@ public class ProfileActivity extends Activity implements View.OnClickListener, O
 	}
 
 	public void onClick(View paramView) {
-//		if (paramView == this.mTvList_Location)
-//			showDropdownList(this.mArray_Location, FLAG_LOCATION,
-//					this.mTvList_Location,
-//					Constant.SharePreferences.KEY_LOCATION);
-//		else 
-			if (paramView == this.mTvList_Name_1)
+		//		if (paramView == this.mTvList_Location)
+		//			showDropdownList(this.mArray_Location, FLAG_LOCATION,
+		//					this.mTvList_Location,
+		//					Constant.SharePreferences.KEY_LOCATION);
+		//		else 
+		if (paramView == this.mTvList_Name_1)
 			showNameDropdownList(FLAG_NAME_1, this.mTvList_Name_1.getText()
 					.toString());
 		else if (paramView == this.mTvList_Role_1)
@@ -369,28 +373,28 @@ public class ProfileActivity extends Activity implements View.OnClickListener, O
 		else if (paramView == this.mTvList_Name_4)
 			showNameDropdownList(FLAG_NAME_4, this.mTvList_Name_4.getText()
 					.toString());
-//		else if (paramView == this.mLinear_NextAppoint)
-//			startActivityForResult(FLAG_NEXT_APPOINT);
+		//		else if (paramView == this.mLinear_NextAppoint)
+		//			startActivityForResult(FLAG_NEXT_APPOINT);
 		else if(paramView == mButton_NextAppointmentDate){
 			showDatePicker(mButton_NextAppointmentDate.getText().toString(),FLAG_NEXT_APPOINT);
 			this.isCheck_before_notify.setChecked(false);
 			saveBooleanPreferences(Constant.SharePreferences.KEY_NOTIFY_IS_CHECK, false);
-			 this.isCheck_before_notify.setBackgroundDrawable(getResources().getDrawable(R.drawable.none_choose));
+			this.isCheck_before_notify.setBackgroundDrawable(getResources().getDrawable(R.drawable.none_choose));
 			if(this.notify != null)this.notify.setFlag(false);}
 		else if(paramView == mButton_NextAppointmentTime)
-			{
+		{
 			showTimePicker(mButton_NextAppointmentTime.getText().toString(),FLAG_NEXT_APPOINT);
 			this.isCheck_before_notify.setChecked(false);
 			saveBooleanPreferences(Constant.SharePreferences.KEY_NOTIFY_IS_CHECK, false);
-			 this.isCheck_before_notify.setBackgroundDrawable(getResources().getDrawable(R.drawable.none_choose));
+			this.isCheck_before_notify.setBackgroundDrawable(getResources().getDrawable(R.drawable.none_choose));
 			if(this.notify != null)this.notify.setFlag(false);
-			}
+		}
 		else if (paramView == this.mLinear_Goals)
 			startActivityForResult(FLAG_GOALS);
 		else if (paramView == this.mLinear_Due)
 			startActivityForResult(FLAG_DUE);
 	}
-	
+
 	private void showDatePicker(String originalDateStr,final int flag){
 		Date originalDate = null;
 		try {
@@ -402,11 +406,11 @@ public class ProfileActivity extends Activity implements View.OnClickListener, O
 		if(originalDate == null){
 			originalDate = new Date();
 		}
-		
+
 		int year = originalDate.getYear() + 1900;
 		int month = originalDate.getMonth();
 		int day = originalDate.getDate();
-		
+
 		DatePickerDialog dialog = new DatePickerDialog(ProfileActivity.this,new DatePickerDialog.OnDateSetListener(){
 
 			@Override
@@ -420,17 +424,20 @@ public class ProfileActivity extends Activity implements View.OnClickListener, O
 					mButton_NextAppointmentDate.setText(str);
 					String dateTime = str + Constant.Profile.DATE_AND_TIME_SEPARATOR + mButton_NextAppointmentTime.getText().toString();
 					saveToPreferences(Constant.SharePreferences.KEY_FIXED_NEXT_APPOINT, dateTime);
+					AddAlarm();
+
 				}
-				
-				
+
+
 			}},year
 			,month
 			,day);
-		
+
 		dialog.show();
-		
+
 	}
-	
+
+
 	private void showTimePicker(String originalTimeStr,final  int flag){
 		Date originalDate = null;
 		try {
@@ -444,9 +451,9 @@ public class ProfileActivity extends Activity implements View.OnClickListener, O
 		}
 		int hour = originalDate.getHours();
 		int minute = originalDate.getMinutes();
-		
+
 		TimePickerDialog dialog = new TimePickerDialog(ProfileActivity.this, new OnTimeSetListener() {
-			
+
 			@Override
 			public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 				Date date = new Date();
@@ -457,10 +464,11 @@ public class ProfileActivity extends Activity implements View.OnClickListener, O
 					mButton_NextAppointmentTime.setText(str);
 					String dateTime =  mButton_NextAppointmentDate.getText().toString() + Constant.Profile.DATE_AND_TIME_SEPARATOR +str;
 					saveToPreferences(Constant.SharePreferences.KEY_FIXED_NEXT_APPOINT, dateTime);
+					AddAlarm();
 				}
 			}
 		}, hour, minute, false);
-		
+
 		dialog.show();
 	}
 
@@ -498,22 +506,88 @@ public class ProfileActivity extends Activity implements View.OnClickListener, O
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			Log.i(TAG, date +"--");
+				Log.i(TAG, date +"--");
 			}
-//			 ProfileNotify.getInstance(ProfileActivity.this, date);
-		 }else{
+			//			 ProfileNotify.getInstance(ProfileActivity.this, date);
+		}else{
 			if(notify != null){
-			 notify.setFlag(false);
-			 saveBooleanPreferences(Constant.SharePreferences.KEY_NOTIFY_IS_CHECK, false);
+				notify.setFlag(false);
+				saveBooleanPreferences(Constant.SharePreferences.KEY_NOTIFY_IS_CHECK, false);
 			}
 			this.isCheck_before_notify.setBackgroundDrawable(getResources().getDrawable(R.drawable.none_choose));
-		 }
+		}
 	}
-	
+
 	private void saveBooleanPreferences(String key, boolean value){
 		SharedPreferences.Editor localEditor = getSharedPreferences(
 				Constant.SharePreferences.KEY_PROFILE_PREFERENCES_NAME, 0).edit();
 		localEditor.putBoolean(key, value);
 		localEditor.commit();
+	}
+
+
+	public void AddAlarm(){
+		Calendar calendar = Calendar.getInstance();
+		long currenttime=calendar.getTimeInMillis();
+		Log.e("before", ""+calendar.getTimeInMillis());
+		String date = getPreferences(Constant.Profile.KEY_FIXED_NEXT_APPOINT);
+		date=date.replace(" ", "");
+		//08-03 00:02:10.443: E/Time(15800): 2014/08/02Sat,12:03am  201/0/0 1:0
+
+		int i = date.indexOf(Constant.Profile.DATE_AND_TIME_SEPARATOR);
+		String time=date.substring(i + 1, date.length());
+		int year=Integer.parseInt(date.substring(0, 4));
+		int month=Integer.parseInt(date.substring(5, 7));
+		int dayofmonth=Integer.parseInt(date.substring(8, 10));
+		int hour=Integer.parseInt(time.substring(0, 2));
+		int min=Integer.parseInt(time.substring(3, 5));
+		
+		if(time.contains("pm")){
+			if(hour!=12){
+				hour+=12;	
+			}
+			
+		}
+		
+
+		Log.e("Time ",date+"  " +year+"/"+month+"/"+dayofmonth+" "+hour+":"+min);
+
+		calendar.set(Calendar.MONTH, month);
+		calendar.set(Calendar.YEAR, year);
+		calendar.set(Calendar.DAY_OF_MONTH, dayofmonth);
+
+		calendar.set(Calendar.HOUR_OF_DAY, hour);
+		calendar.set(Calendar.MINUTE, min);
+		calendar.set(Calendar.SECOND, 0);
+		
+		
+		Calendar calendar1 = Calendar.getInstance();
+		calendar1.set(year, month, dayofmonth, 
+				hour, Calendar.MINUTE, 0);
+		long startTime = calendar1.getTimeInMillis();
+		
+		try {
+			SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy, HH:mm");
+			formatter.setLenient(false);
+			
+			String oldTime =dayofmonth+"." +month+"."+year+", "+hour+":"+min;//"05.01.2011, 12:45";
+			Date oldDate = formatter.parse(oldTime);
+			startTime= oldDate.getTime();
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//calendar.set(Calendar.AM_PM,Calendar.AM);
+		Log.e("after", ""+startTime);
+		if(startTime-currenttime>60*60*1000){
+			startTime-=60*60*1000;
+			Intent myIntent = new Intent(ProfileActivity.this, AlarmReceiver.class);
+			myIntent.putExtra("appoinmentalarm", true);
+			PendingIntent pendingIntent = PendingIntent.getBroadcast(ProfileActivity.this, 0, myIntent,PendingIntent.FLAG_CANCEL_CURRENT);
+
+			AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+			alarmManager.set(AlarmManager.RTC,startTime, pendingIntent);
+	}
+		
 	}
 }

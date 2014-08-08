@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@color/gray71"
     android:orientation="vertical" >
 
-    <include android:id="@+id/head" layout="@layout/head_nab" />
+    <include
+        android:id="@+id/head"
+        layout="@layout/head_nab" />
 
     <ScrollView
         android:layout_width="fill_parent"
@@ -252,22 +255,21 @@
                         android:id="@+id/linear_next_appoint"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        
-                        
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
                         android:paddingBottom="5.0dip"
-                        android:paddingTop="5.0dip" >
+                        android:paddingTop="5.0dip"
+                        tools:ignore="DuplicateIds" >
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="3.0dip"
+                            android:layout_marginRight="3.0dip"
                             android:text="@string/next_appoint_colon"
-                        android:layout_marginLeft="3.0dip"
-                        android:layout_marginRight="3.0dip"
-                        android:textColor="@color/black"
-                        android:textSize="18.0sp"
-                        android:textStyle="bold"  />
+                            android:textColor="@color/black"
+                            android:textSize="18.0sp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/tv_next_appoint"
@@ -283,66 +285,77 @@
                             android:textColor="@color/black"
                             android:textSize="12.0sp" />
 
-                       <!--  <ImageView
+                        <!--
+                             <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/expander" /> -->
+                            android:src="@drawable/expander" />
+                        -->
                     </LinearLayout>
-                    
-                    <LinearLayout android:layout_width="match_parent"
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
+                        android:layout_marginBottom="5.0dip"
                         android:gravity="center_vertical"
-                        android:layout_marginBottom="5.0dip">
-                        <TextView 
+                        android:orientation="horizontal" >
+
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginRight="3.0dip"
                             android:text="@string/on"
-                            android:textColor="@color/gray"
-                            android:layout_marginRight="3.0dip"
-                            />
-                        <Button android:id="@+id/btn_next_appoint_date"
+                            android:textColor="@color/gray" />
+
+                        <Button
+                            android:id="@+id/btn_next_appoint_date"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Jun 06 2012"
-                            android:layout_weight="1"
-                            android:layout_marginRight="3.0dip"
-                            android:layout_marginLeft="3.0dip"/>
-                        
-                         <TextView 
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/at"
-                            android:textColor="@color/gray"
-                            android:layout_marginRight="3.0dip"
                             android:layout_marginLeft="3.0dip"
-                            />
-                        <Button android:id="@+id/btn_next_appoint_time"
+                            android:layout_marginRight="3.0dip"
+                            android:layout_weight="1"
+                            android:text="Jun 06 2012" />
+
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="11:01 AM"
-                            android:layout_weight="1"
-                            android:layout_marginLeft="3.0dip"/>"
-                    </LinearLayout>
-                    
-                      <LinearLayout android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal" android:visibility="gone"
-                        android:gravity="center_vertical"
-                        android:layout_marginBottom="5.0dip">
-                        <TextView 
+                            android:layout_marginLeft="3.0dip"
+                            android:layout_marginRight="3.0dip"
+                            android:text="@string/at"
+                            android:textColor="@color/gray" />
+
+                        <Button
+                            android:id="@+id/btn_next_appoint_time"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" 
-                            android:text="@string/profile_is_before_notify_title"
-                            android:textColor="@color/gray"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3.0dip"
+                            android:layout_weight="1"
+                            android:text="11:01 AM" />
+"
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5.0dip"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="gone" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_marginLeft="25dip"
                             android:layout_marginRight="3.0dip"
-                            />
-                     <CheckBox android:id="@+id/profile_is_before_notify"  
-                         android:layout_width="wrap_content"
-                     android:button="@null"
-                     android:background="@drawable/none_choose"
-                     android:layout_height="wrap_content"/>
+                            android:text="@string/profile_is_before_notify_title"
+                            android:textColor="@color/gray" />
+
+                        <CheckBox
+                            android:id="@+id/profile_is_before_notify"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/none_choose"
+                            android:button="@null" />
                     </LinearLayout>
                 </LinearLayout>
 

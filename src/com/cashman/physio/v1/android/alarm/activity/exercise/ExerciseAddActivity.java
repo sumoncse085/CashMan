@@ -16,6 +16,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.text.format.DateFormat;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -72,6 +73,7 @@ public class ExerciseAddActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Log.e("Oncreate", "Oncreate");
 		setContentView(R.layout.alarm_add);
 		
 		DisplayMetrics dm = new DisplayMetrics();

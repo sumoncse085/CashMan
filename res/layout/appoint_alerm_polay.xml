@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:paddingLeft="50dp"
+    android:paddingRight="50dp"
+    android:gravity="center" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingLeft="17dp"
+        android:paddingTop="25dp"
+        android:background="@drawable/rounded_corner_withboarder"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_mesage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             android:layout_marginRight="17dp"
+            android:text="You have an appoinment"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/btn_stop"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="12dp"
+             android:layout_marginRight="6dp"
+             android:layout_marginBottom="6dp"
+            android:layout_gravity="right"
+            android:background="@drawable/cross" />
+
+    </LinearLayout>
+
+</RelativeLayout>

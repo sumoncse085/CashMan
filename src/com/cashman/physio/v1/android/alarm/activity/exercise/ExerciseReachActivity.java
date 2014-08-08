@@ -7,10 +7,12 @@ import java.util.TimerTask;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.KeyguardManager;
 import android.app.KeyguardManager.KeyguardLock;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.media.AudioManager;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
@@ -18,9 +20,11 @@ import android.os.Bundle;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -53,7 +57,7 @@ public class ExerciseReachActivity extends Activity {
 	private WakeLock mWakelock = null;
 	private Timer mStopRingTimer = null;
 	private int mRingtoneVolume = -2;
-
+	
 	private static final String TAG = "ExerciseReachActivity";
 
 	@Override
@@ -62,7 +66,7 @@ public class ExerciseReachActivity extends Activity {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.alarm_reach_alert_window);
-		
+
 		setRingtoneVolume(0);
 		initViews();
 	}
@@ -76,20 +80,29 @@ public class ExerciseReachActivity extends Activity {
 
 		AlarmItem alarmItem = (AlarmItem) getIntent().getExtras()
 				.getSerializable(Constant.Alarm.Intent.KEY_ALARM_ITEM);
-		mTextView_Name.setText(alarmItem.getName());
-		mTextView_Instruction.setText(alarmItem.getInstruction());
-
-		String videoPath = alarmItem.getVideoPath();
-		mVideoPath = videoPath;
-
-		if (alarmItem.isRingtoneEnable() && !checkIfSilent()) {
-			mRingtoneUri = alarmItem.getRingtoneUri();
-			playRingtone(mRingtoneUri);
+		if(alarmItem==null){
+			mTextView_Name.setText("Next Appointment");
+			//mTextView_Instruction.setText(alarmItem.getInstruction());
 		}
-		mVibrateEnable = alarmItem.isVibrateEnable();
-		if (mVibrateEnable) {
-			playVibrate();
+		else{
+			mTextView_Name.setText(alarmItem.getName());
+			mTextView_Instruction.setText(alarmItem.getInstruction());
+			String videoPath = alarmItem.getVideoPath();
+			mVideoPath = videoPath;
+			if (alarmItem.isRingtoneEnable() && !checkIfSilent()) {
+				mRingtoneUri = alarmItem.getRingtoneUri();
+				playRingtone(mRingtoneUri);
+			}
+			mVibrateEnable = alarmItem.isVibrateEnable();
+			if (mVibrateEnable) {
+				playVibrate();
+			}
 		}
+
+
+
+
+
 
 		mButton_Done.setOnClickListener(new OnClickListener() {
 
@@ -103,7 +116,7 @@ public class ExerciseReachActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				boolean isPlaying = false;
-				
+
 				if (mRingtone != null) {
 					if (mRingtone.isPlaying()) {
 						mRingtone.stop();
@@ -112,14 +125,14 @@ public class ExerciseReachActivity extends Activity {
 						if(getRingtoneVolumn() > 0){
 							isPlaying = true;
 						}
-						
+
 					}
 				}
 				LocalLog.i(TAG, "*****1  isPlaying = "+isPlaying);
-//				lastDate = new Date();
+				//				lastDate = new Date();
 				if (mVibrateEnable && mVibrator == null) {
 					playVibrate();
-					
+
 					isPlaying = true;
 				} else {
 					if (mVibrator != null) {
@@ -133,7 +146,7 @@ public class ExerciseReachActivity extends Activity {
 					startTimer();
 				}else{
 					if(mStopRingTimer != null){
-						
+
 						mStopRingTimer.cancel();
 						mStopRingTimer.purge();
 						mStopRingTimer = null ;
@@ -169,29 +182,67 @@ public class ExerciseReachActivity extends Activity {
 	}
 
 	private void showVideoPlayer() {
-		AlertDialog.Builder localBuilder = new AlertDialog.Builder(this);
-		localBuilder.setTitle(R.string.video_player_title);
-		LinearLayout localLinearLayout = new LinearLayout(this);
-		VideoView localVideoView = new VideoView(this);
-		localVideoView.setZOrderOnTop(true);
-		localLinearLayout.addView(localVideoView,
-				new LinearLayout.LayoutParams(-2, -2));
-		localLinearLayout.setGravity(17);
-		
-		localVideoView
-				.setVideoPath(new File(this.mVideoPath).getAbsolutePath());
-		localVideoView.start();
-		localBuilder.setView(localLinearLayout);
-		localBuilder.setPositiveButton(R.string.ok,
-				new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface paramDialogInterface,
-							int paramInt) {
-						paramDialogInterface.dismiss();
 
-					}
-				});
-		localBuilder.create().show();
+     Intent intent=new Intent(ExerciseReachActivity.this, PlayVedioActivity.class);
+     intent.putExtra("vediopath", new File(this.mVideoPath).getAbsolutePath());
+      startActivity(intent);
+      finish();
+//		final Dialog dia = new Dialog(ExerciseReachActivity.this);
+//		dia.setContentView(R.layout.alert_video_view);
+//
+//		dia.setTitle(R.string.video_player_title);
+//		dia.setCancelable(true);
+//
+//		VideoView vv_show = (VideoView) dia.findViewById(R.id.vv_show);
+//		
+//		vv_show
+//		.setVideoPath(new File(this.mVideoPath).getAbsolutePath());
+//		vv_show.start();
+//		Log.e("Tagged", new File(this.mVideoPath).getAbsolutePath());
+////		WindowManager.LayoutParams a = dia.getWindow().getAttributes();
+////		a.dimAmount = 0;
+////		dia.getWindow().setAttributes(a);
+//		Button btn_ok=(Button) dia.findViewById(R.id.btn_ok);
+//		btn_ok.setOnClickListener(new OnClickListener() {
+//
+//			@Override
+//			public void onClick(View v) {
+//				// TODO Auto-generated method stub
+//				dia.cancel();
+//				finish();
+//			}
+//		});
+//
+//		dia.show();
+
 	}
+	//	private void showVideoPlayer() {
+	//		final Dialog dia = new Dialog(ExerciseReachActivity.this);
+	//		
+	//		AlertDialog.Builder localBuilder = new AlertDialog.Builder(this);
+	//		localBuilder.setTitle(R.string.video_player_title);
+	//		
+	//		LinearLayout localLinearLayout = new LinearLayout(this);
+	//		VideoView localVideoView = new VideoView(this);
+	//		localVideoView.setZOrderOnTop(true);
+	//		localLinearLayout.addView(localVideoView,
+	//				new LinearLayout.LayoutParams(-2, -2));
+	//		localLinearLayout.setGravity(17);
+	//		
+	//		localVideoView
+	//				.setVideoPath(new File(this.mVideoPath).getAbsolutePath());
+	//		localVideoView.start();
+	//		localBuilder.setView(localLinearLayout);
+	//		localBuilder.setPositiveButton(R.string.ok,
+	//				new DialogInterface.OnClickListener() {
+	//					public void onClick(DialogInterface paramDialogInterface,
+	//							int paramInt) {
+	//						paramDialogInterface.dismiss();
+	//
+	//					}
+	//				});
+	//		localBuilder.create().show();
+	//	}
 
 	private boolean checkIfSilent() {
 		AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
@@ -235,6 +286,7 @@ public class ExerciseReachActivity extends Activity {
 			if (uri == null || uri.length() <= 0) {
 				ringtone = tool.getDefaultRingtone(RingtoneManager.TYPE_ALL);
 			} else {
+				Log.d("Uri", uri.toString());
 				ringtone = tool.getRingtoneByUriPath(RingtoneManager.TYPE_ALL,
 						uri);
 			}
@@ -242,7 +294,7 @@ public class ExerciseReachActivity extends Activity {
 		}
 		mRingtone.play();
 	}
-	
+
 	private void setRingtoneVolume(int delta){
 		int setVolume = mRingtoneVolume;
 		if(setVolume == -2){
@@ -253,7 +305,7 @@ public class ExerciseReachActivity extends Activity {
 				setVolume = Constant.Ringtone.DEFAULT_RINGTONE_VOLUME;
 			}
 		}
-		
+
 		setVolume += delta;
 		int alarmStreamType = AudioManager.STREAM_RING;
 		AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
@@ -263,7 +315,7 @@ public class ExerciseReachActivity extends Activity {
 		}else if(setVolume < 0){
 			setVolume = 0;
 		}
-		
+
 		int flags = AudioManager.FLAG_PLAY_SOUND;
 		if(delta != 0){
 			flags |= AudioManager.FLAG_SHOW_UI;
@@ -276,9 +328,9 @@ public class ExerciseReachActivity extends Activity {
 		if(setVolume > 0){
 			playRingtone(mRingtoneUri);
 		}
-//		PreferencesTool.save(ExerciseReachActivity.this, Constant.Ringtone.NAME, Constant.Ringtone.KEY_RINGTONE_VOLUME,String.valueOf(setVolume));
+		//		PreferencesTool.save(ExerciseReachActivity.this, Constant.Ringtone.NAME, Constant.Ringtone.KEY_RINGTONE_VOLUME,String.valueOf(setVolume));
 	}
-	
+
 	private int getRingtoneVolumn(){
 		AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		return audioManager.getStreamVolume(AudioManager.STREAM_RING);
@@ -286,7 +338,7 @@ public class ExerciseReachActivity extends Activity {
 
 	private void showToast(int textId) {
 		Toast.makeText(ExerciseReachActivity.this, textId, Toast.LENGTH_LONG)
-				.show();
+		.show();
 	}
 
 	// private void setVisibility(int flag) {
@@ -305,30 +357,30 @@ public class ExerciseReachActivity extends Activity {
 	// mButton_View.setVisibility(View.VISIBLE);
 	// }
 	// }
-	
-	
+
+
 	@Override
 	protected void onStart() {
 		super.onStart();
-		
+
 		startTimer();
 	}
-	
-	
-	
+
+
+
 	private void startTimer(){
-		 if (this.mStopRingTimer == null)
-		      this.mStopRingTimer = new Timer();
-//		 mStopRingTimer.schedule(new StopRingTimer(), when)
-		 this.mStopRingTimer.schedule(new StopRingTimer(), RINGTONE_DURATION);
+		if (this.mStopRingTimer == null)
+			this.mStopRingTimer = new Timer();
+		//		 mStopRingTimer.schedule(new StopRingTimer(), when)
+		this.mStopRingTimer.schedule(new StopRingTimer(), RINGTONE_DURATION);
 	}
-	
+
 
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
 		PreferencesTool.save(ExerciseReachActivity.this, Constant.Ringtone.NAME, Constant.Ringtone.KEY_RINGTONE_VOLUME,String.valueOf(mRingtoneVolume));
-		
+
 		if (mRingtone != null && mRingtone.isPlaying()) {
 			mRingtone.stop();
 		}
@@ -369,7 +421,7 @@ public class ExerciseReachActivity extends Activity {
 		}else if(keyCode == KeyEvent.KEYCODE_VOLUME_DOWN){
 			setRingtoneVolume(-1);
 		}
-		
+
 		return true;
 	}
 
@@ -377,18 +429,18 @@ public class ExerciseReachActivity extends Activity {
 		AlarmApplication.appInstance.startAlarm();
 	}
 
-//	private Date lastDate = new Date();
-	
+	//	private Date lastDate = new Date();
+
 	private class StopRingTimer extends TimerTask {
 		private StopRingTimer() {
 		}
 
 		public void run() {
-			
-//			Date current = new Date();
-//			LocalLog.i(TAG,"&&&&&  "+(current.getTime() - lastDate.getTime()));
-//			lastDate = current;
-			
+
+			//			Date current = new Date();
+			//			LocalLog.i(TAG,"&&&&&  "+(current.getTime() - lastDate.getTime()));
+			//			lastDate = current;
+
 			if ((ExerciseReachActivity.this.mRingtone != null)
 					&& (ExerciseReachActivity.this.mRingtone.isPlaying()))
 				ExerciseReachActivity.this.mRingtone.stop();
@@ -397,7 +449,7 @@ public class ExerciseReachActivity extends Activity {
 				mVibrator = null;
 				System.gc();
 			}
-				
+
 		}
 	}
 }
