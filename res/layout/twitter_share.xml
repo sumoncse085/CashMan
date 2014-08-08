@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/head" />
+    <ScrollView android:orientation="vertical" android:background="@drawable/profile_bkg" android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:background="@drawable/corner_rectangle" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textColor="@color/black" android:gravity="left" android:id="@+id/tv_twitter_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:text="@string/not_log_in" android:layout_weight="1.0" />
+                <Button android:id="@+id/twitter_login" android:layout_width="80dp" android:layout_height="wrap_content" android:text="Login" />
+            </LinearLayout>
+            <View android:background="@color/gray71" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_marginBottom="8.0dip">
+                <TextView android:textSize="20.0sp" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="5.0dip" android:text="@string/share_to" />
+                <ImageView android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/twitter_icon" android:scaleType="fitCenter" />
+            </LinearLayout>
+            <EditText android:textSize="18.0sp" android:textColor="@color/black" android:gravity="top" android:id="@+id/edit_caption" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="160.0dip" android:layout_marginLeft="30.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="30.0dip" android:layout_marginBottom="8.0dip" android:hint="@string/caption" android:singleLine="false" android:maxLength="500" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

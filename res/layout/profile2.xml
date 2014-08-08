@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/head" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5.0dip" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5.0dip"
+                android:background="@color/half_transparent_black"
+                android:orientation="vertical"
+                android:padding="2.0dip" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/business_name_colon"
+                    android:textColor="@color/white"
+                    android:textSize="12.0sp" />
+
+                <EditText
+                    android:id="@+id/edit_business"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3.0dip"
+                    android:background="@color/half_transparent_white"
+                    android:maxLength="160"
+                    android:scrollbars="horizontal"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/darkgrey" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/physio_name_colon"
+                    android:textColor="@color/white"
+                    android:textSize="12.0sp" />
+
+                <EditText
+                    android:id="@+id/edit_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3.0dip"
+                    android:background="@color/half_transparent_white"
+                    android:maxLength="160"
+                    android:scrollbars="horizontal"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/darkgrey" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/phone_colon"
+                    android:textColor="@color/white"
+                    android:textSize="12.0sp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/edit_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3.0dip"
+                        android:layout_weight="1.0"
+                        android:background="@color/half_transparent_white"
+                        android:phoneNumber="true"
+                        android:scrollbars="horizontal"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/darkgrey" />
+
+                    <Button
+                        android:id="@+id/btn_call"
+                        android:layout_width="50.0dip"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/head_btn_bkg"
+                        android:gravity="center"
+                        android:padding="3.0dip"
+                        android:text="@string/call_uppercase" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/email_colon"
+                    android:textColor="@color/white"
+                    android:textSize="12.0sp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/edit_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3.0dip"
+                        android:layout_weight="1.0"
+                        android:background="@color/half_transparent_white"
+                        android:scrollbars="horizontal"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/darkgrey" />
+
+                    <Button
+                        android:id="@+id/btn_email"
+                        android:layout_width="50.0dip"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/head_btn_bkg"
+                        android:gravity="center"
+                        android:padding="3.0dip"
+                        android:text="@string/email_uppercase" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:background="@color/half_transparent_black"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="3.0dip" 
+                    android:background="@color/half_transparent_white">
+
+                    <LinearLayout
+                        android:id="@+id/linear_next_appoint"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        
+                        
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingBottom="5.0dip"
+                        android:paddingTop="5.0dip" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/next_appoint_colon" />
+
+                        <TextView
+                            android:id="@+id/tv_next_appoint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5.0dip"
+                            android:layout_marginRight="5.0dip"
+                            android:layout_weight="1.0"
+                            android:ellipsize="marquee"
+                            android:gravity="right"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="12.0sp" />
+
+                       <!--  <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/expander" /> -->
+                    </LinearLayout>
+                    
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="5.0dip">
+                        <TextView 
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/on"
+                            android:textColor="@color/gray"
+                            android:layout_marginRight="3.0dip"
+                            />
+                        <Button android:id="@+id/btn_next_appoint_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Jun 06 2012"
+                            android:layout_weight="1"
+                            android:layout_marginRight="3.0dip"
+                            android:layout_marginLeft="3.0dip"/>
+                        
+                         <TextView 
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/at"
+                            android:textColor="@color/gray"
+                            android:layout_marginRight="3.0dip"
+                            android:layout_marginLeft="3.0dip"
+                            />
+                        <Button android:id="@+id/btn_next_appoint_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="11:01 AM"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="3.0dip"/>"
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_goals"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3.0dip"
+                    android:background="@drawable/half_transparent_rectangle_bkg"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8.0dip"
+                    android:paddingTop="8.0dip" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/goals_colon" />
+
+                    <TextView
+                        android:id="@+id/tv_goals"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5.0dip"
+                        android:layout_marginRight="5.0dip"
+                        android:layout_weight="1.0"
+                        android:ellipsize="marquee"
+                        android:gravity="right"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="12.0sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/expander" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_date"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3.0dip"
+                    android:background="@drawable/half_transparent_rectangle_bkg"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8.0dip"
+                    android:paddingTop="8.0dip" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/date_to_complete_colon" />
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5.0dip"
+                        android:layout_marginRight="5.0dip"
+                        android:layout_weight="1.0"
+                        android:ellipsize="marquee"
+                        android:gravity="right"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="12.0sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/expander" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

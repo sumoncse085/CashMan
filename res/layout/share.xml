@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/gray71" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@+id/head" layout="@layout/head_nab" />
+    <ScrollView android:paddingLeft="10.0dip" android:paddingTop="5.0dip" android:paddingRight="10.0dip" android:paddingBottom="5.0dip" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:background="@drawable/corner_rectangle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="5.0dip">
+            <TextView android:textSize="20.0sp" android:textStyle="bold" android:textColor="@color/black" android:gravity="center" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="20.0dip" android:text="@string/share_app" />
+            <TextView android:textSize="20.0sp" android:textColor="@color/black" android:gravity="center" android:id="@+id/tv_facebook" android:background="@drawable/tv_view_map_bkg" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="160.0dip" android:layout_height="wrap_content" android:layout_marginBottom="20.0dip" android:text="@string/facebook" />
+            <TextView android:textSize="20.0sp" android:textColor="@color/black" android:gravity="center" android:id="@+id/tv_twitter" android:background="@drawable/tv_view_map_bkg" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="160.0dip" android:layout_height="wrap_content" android:layout_marginBottom="20.0dip" android:text="@string/twitter" />
+            <TextView android:textSize="20.0sp" android:textColor="@color/black" android:gravity="center" android:id="@+id/tv_email" android:background="@drawable/tv_view_map_bkg" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="160.0dip" android:layout_height="wrap_content" android:layout_marginBottom="20.0dip" android:text="@string/email" />
+            <TextView android:textSize="20.0sp" android:textColor="@color/black" android:gravity="center" android:id="@+id/tv_sms" android:background="@drawable/tv_view_map_bkg" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="160.0dip" android:layout_height="wrap_content" android:layout_marginBottom="20.0dip" android:text="@string/text" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

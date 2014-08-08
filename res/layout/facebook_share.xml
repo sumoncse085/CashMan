@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/head" />
+    <ScrollView android:background="@drawable/profile_bkg" android:padding="5.0dip" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:background="@drawable/corner_rectangle" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textColor="@color/black" android:gravity="left" android:id="@+id/tv_fb_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:text="@string/not_log_in" android:layout_weight="1.0" />
+                <com.cashman.physio.v1.android.alarm.activity.share.facebook.LoginButton android:id="@+id/login" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/login_button" />
+            </LinearLayout>
+            <View android:background="@color/gray71" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textColor="@color/black" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/share_to" />
+                <ImageView android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/fb_icon" android:scaleType="fitCenter" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <EditText android:gravity="top" android:id="@+id/edit_comment" android:layout_width="fill_parent" android:layout_height="200.0dip" android:hint="@string/comment" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

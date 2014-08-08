@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ViewSwitcher android:id="@+id/switcher" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@+id/img_page" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/habit_default" android:scaleType="fitXY" />
+    <TabHost android:id="@android:id/tabhost" android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <FrameLayout android:id="@android:id/tabcontent" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            <View android:background="@color/gray" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <TabWidget android:id="@android:id/tabs" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </TabHost>
+</ViewSwitcher>

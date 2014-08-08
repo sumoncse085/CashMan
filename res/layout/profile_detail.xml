@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/profile_bkg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/head" />
+    
+    <ScrollView android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:id="@+id/img_staff" android:layout_width="match_parent" android:layout_height="wrap_content" android:scaleType="fitCenter" />
+            <TextView android:textSize="18.0sp" android:textColor="@color/white" android:id="@+id/tv_detail" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="details" android:lineSpacingMultiplier="1.5" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

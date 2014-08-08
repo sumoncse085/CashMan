@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Cashman</string>
+    <string name="tab_alarm">Rehab Exercise</string>
+    <string name="tab_home">Home</string>
+    <string name="tab_profile">My Profile</string>
+    <string name="tab_about">About Us</string>
+    <string name="tab_contact">Contact Us</string>
+    <string name="tab_share">Share App</string>
+    <string name="tab_more">More</string>
+    <string name="tab_info">Info</string>
+    <string name="home_tab_alarm">Rehab Exercise</string>
+    <string name="home_tab_specials">Notifications</string>
+    <string name="home_tab_products">Products</string>
+    <string name="home_tab_home">Home</string>
+    <string name="home_tab_profile">My Profile</string>
+    <string name="home_tab_about">About Us</string>
+    <string name="home_tab_contact">Contact Us</string>
+    <string name="home_tab_share">Share App</string>
+    <string name="home_tab_more">More</string>
+    <string name="home_tab_news">News</string>
+    <string name="add_alarm">Add Alarm</string>
+    <string name="configure_alarm">Configure</string>
+    <string name="alarm_name_hint">name,maxLength=100</string>
+    <string name="alarm_instruction_hint">instruction,maxLenght=1000</string>
+    <string name="alarm_weekday">Weekday</string>
+    <string name="alarm_weekday_colon">Weekday:</string>
+    <string name="alarm_name">Name</string>
+    <string name="alarm_instruction">Instruction</string>
+    <string name="alarm_name_colon">Name:</string>
+    <string name="alarm_instruction_colon">Instruction:</string>
+    <string name="back">Back</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="dialog_title_weekday">Weekday Selection</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="input_warning_title">Input Warning</string>
+    <string name="name_empty_warning">Alarm name can not be empty !</string>
+    <string name="instruction_empty_wraning">Alarm instruction can not be empty !</string>
+    <string name="times_per_day">Times per day</string>
+    <string name="every">Every</string>
+    <string name="start_time">Start time</string>
+    <string name="video">Video</string>
+    <string name="activate">Activate</string>
+    <string name="head_back">back</string>
+    <string name="head_save">save</string>
+    <string name="sd_warning">SD Warning !</string>
+    <string name="sd_warning_content">The sd card is not available, the video file will store on internal storage !</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="saving">Saving</string>
+    <string name="save_successfully">Saved successfully!</string>
+    <string name="save_fail">Error: Save alarm error!</string>
+    <string name="delete_successfully">Delete successfully!</string>
+    <string name="delete_fail">Error: Delete alarm error!</string>
+    <string name="deleting">Deleting...</string>
+    <string name="delete_alarm_warning_title">Delete warning!</string>
+    <string name="delete_alarm_warning_content">Would you like to delete this alarm?</string>
+    <string name="loading">Loading...</string>
+    <string name="load_error">load error</string>
+    <string name="start_time_colon">Start time:</string>
+    <string name="alarm_colon">Alarm:</string>
+    <string name="ringtone_selection_colon">Ringtone:</string>
+    <string name="ringtone_enable_colon">Ringtone:</string>
+    <string name="vibrate_enable_colon">Vibrate:</string>
+    <string name="activate_colon">Activate:</string>
+    <string name="ringtone_selection_title">Ringtone Selection</string>
+    <string name="delete_parent_alarm_fail">Can not delete the base alarm !</string>
+    <string name="weekday_selected_null_wraning">Error: you must select a weekday !</string>
+    <string name="delete_alarm_warning_content2">"Would you like to delete the alarm 
+\" %1$s \" ?"</string>
+    <string name="reset">Reset</string>
+    <string name="reset_alarm_warning_title">Reset warning!</string>
+    <string name="reset_alarm_warning_content">Would you like to reset this alarm ?</string>
+    <string name="text_times_default">4</string>
+    <string name="text_every_default">4 hours</string>
+    <string name="text_start_time_default">12:00</string>
+    <string name="edit">Edit</string>
+    <string name="play_video">Play Video</string>
+    <string name="video_player_title">Video player</string>
+    <string name="weekday_selected_null_content">Weekday is not selected! Please select one day at least!</string>
+    <string name="view">View Video ></string>
+    <string name="video_path_null">The video does not exist !</string>
+    <string name="video_play_error">The video can not be played!</string>
+    <string name="location_select_title">Select a Location</string>
+    <string name="location_colon">Location:</string>
+    <string name="my">My</string>
+    <string name="role_select_title">Select a Role</string>
+    <string name="name_select_title">Select a Name</string>
+    <string name="name_colon">Name:</string>
+    <string name="role_colon">Role:</string>
+    <string name="please_select">please select</string>
+    <string name="add">Add</string>
+    <string name="input_new_name">input a new name</string>
+    <string name="select">Select</string>
+    <string name="new_name">New Name</string>
+    <string name="select_name">Select a name</string>
+    <string name="name_alert_title">Name Alert!</string>
+    <string name="name_alert_content">You don not get a name yet.Do you want to quit?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="next_appoint_colon">Next Appointment:</string>
+    <string name="goals_colon">Goals:</string>
+    <string name="date_to_complete_colon">Date to complete:</string>
+    <string name="none">None</string>
+    <string name="time_colon">Time:</string>
+    <string name="date_colon">Date:</string>
+    <string name="month">Month</string>
+    <string name="day">Day</string>
+    <string name="hour">Hour</string>
+    <string name="minute">Minute</string>
+    <string name="complete_date">Complete Date</string>
+    <string name="goals">Goals</string>
+    <string name="next_appoint">Next Appoint</string>
+    <string name="appoint">Appoint</string>
+    <string name="input_goals">input goals</string>
+    <string name="view_staff_profiles">View Staff Profiles</string>
+    <string name="about_us_details">Maximise your recovery:&lt;/b>&lt;br>&lt;br> Habit Physiotherapy and Rehabilitation Clinics have met the stringent requirements of the Physiotherapy Accreditation Scheme which results in you receiving simply the best Physiotherapy treatment available. As a contracted ACC provider we can register your injury directly with ACC, saving you time and money. A doctors referral is not necessary.&lt;br>&lt;br> ACC co-payment is only $20 for standard physiotherapy treatment (initial and follow up sessions). An additional surcharge may apply for extended treatment sessions.&lt;br>&lt;br> Opening hours:&lt;br> Monday – Thursday: 7:30am to 6:00pm&lt;br> Friday: 7:30am-5:00pm&lt;br> Saturday: 9:00am-12:00pm (Evans Bay and Petone only) &lt;br>&lt;br> Our Physiotherapists are trained in the most effective and safe techniques for the treatment of all injuries. We offer many treatment alternatives and will implement the most appropriate option for you and your injury. Habit Physiotherapy patients experience complete body balance as a result of adequate rehabilitation, injury prevention education and sound training advice and programming.&lt;br>&lt;br> At Habit Physiotherapy we strive to have an understanding of each client\'s needs and goals, closely following individual\'s progress to ensure that each person is rehabilitated to their maximum potential, often surpassing their pre injury level of flexibility and wellbeing.&lt;br>&lt;br> &lt;b>Services:&lt;/b>&lt;br>&lt;br> • Sports Injuries&lt;br> • Back and Neck Injuries&lt;br> • Exercise Based Rehabilitation&lt;br> • Workplace Assessment and Injury Treatment&lt;br> • Posture and Muscle Balance&lt;br> • Assessment&lt;br> • Post Op/Fracture Rehabilitation&lt;br> • Corporate Health Solutions&lt;br> • Advanced Exercise Programming&lt;br> • Workplace Solutions&lt;br>&lt;br> You no longer need a doctors referral to be covered by ACC. We can register your injury with ACC directly, minimizing the cost to you and maximizing the speed of your recovery.&lt;br>&lt;br> As required we can also refer you for x-ray or specialist consultation.&lt;br>&lt;br></string>
+    <string name="staff_list">Staff List</string>
+    <string name="profile">Profile</string>
+    <string name="profile_Naomi_Faulknor">&lt;b>Naomi Faulknor &lt;/b>&lt;br>&lt;br> &lt;b>Location: Majestic Centre, Wellington&lt;/b>&lt;br>&lt;br> &lt;b>Qualifications&lt;/b>&lt;br>&lt;br> &lt;b>Professional Experience:&lt;/b>&lt;br> • 8yrs working as a Musculoskeletal Physiotherapist&lt;br> • Member of the New Zealand Society of Physiotherapists (NZSP)&lt;br> • Member of the New Zealand Manipulative Physiotherapists Association (NZMPA)&lt;br> • Australian Pilates for Physiotherapists certified Matwork Instructor&lt;br> • Diploma in McKenzie Mechanical Diagnosis and Therapy&lt;br>&lt;br> &lt;b>Speciality Areas:&lt;/b>&lt;br> • Acute and Chronic Rehabilitation&lt;br> • Running Biomechanics and footwear analysis&lt;br> • Sports Specific Rehabilitation&lt;br> • Spinal rehabilitation&lt;br> • Workplace ergonomics&lt;br> • Manual Therapy&lt;br> • Clinical Pilates Rehabilitation&lt;br></string>
+    <string name="profile_Penny_Holman">&lt;b>Penny Holman&lt;/b>&lt;br>&lt;br> &lt;b>Location: Majestic Centre, Wellington&lt;/b>&lt;br>&lt;br> &lt;b>Qualifications&lt;/b>&lt;br> • Bachelor of Exercise and Sport Science&lt;br> Exeter University, UK&lt;br> • Bachelor of Physiotherapy&lt;br> Cardiff University, UK&lt;br>&lt;br> &lt;b>Professional Experience:&lt;/b>&lt;br> • Musculoskeletal and Neurological Physiotherapy&lt;br> Herefordshire Primary Care Trust&lt;br> • Rugby, Netball and Basketball sports physiotherapy&lt;br> • Member Chartered Society of Physiotherapy&lt;br> • Member of the New Zealand Society of Physiotherapists&lt;br> • Member of Mckenzie Institute&lt;br>&lt;br> &lt;b>Speciality Areas:&lt;/b>&lt;br> • Physiotherapy&lt;br> • Spinal rehabilitation&lt;br> • Personal training&lt;br> • Taping&lt;br> • Manipulation&lt;br> • Therapeutic massage&lt;br> • Core stability&lt;br> • Running analysis and foot wear analysis&lt;br></string>
+    <string name="profile_Zak_Nichols">&lt;b>Zak Nichols&lt;/b>&lt;br>&lt;br> &lt;b>Location: Majestic Centre, Wellington&lt;/b>&lt;br>&lt;br> &lt;b>Qualifications&lt;/b>&lt;br> Bachelor of Health Science (Physiotherapy)&lt;br> AUT University&lt;br> &lt;b>Professional Experience:&lt;/b>&lt;br> • Undergraduate clinical experience in musculoskeletal, cardiopulmonary, orthopedic, neurological clinics and hospitals.&lt;br>&lt;br> &lt;b>Speciality Areas:&lt;/b>&lt;br> • Sports physiotherapy&lt;br> • Post-operative rehabilitation&lt;br> • Biomechanical analysis&lt;br> • Acute and chronic injury rehabilitation&lt;br> • Exercise prescription&lt;br></string>
+    <string name="profile_Philip_Guthrie">&lt;b> Philip Guthrie&lt;/b>&lt;br>&lt;br> &lt;b>Location: Majestic Centre, Wellington&lt;/b>&lt;br>&lt;br> &lt;b>Qualifications&lt;/b>&lt;br> • Bachelor of Physiotherapy&lt;br> University of Otago&lt;br> • Bachelor of Science (Psychology)&lt;br> University of Otago&lt;br>&lt;br> &lt;b>Professional Experience:&lt;/b>&lt;br> • Philip is an experienced Musculoskeletal Physiotherapist&lt;br> • He is a member of the New Zealand Manipulative Physiotherapy Association (NZMPA) having completed the NZMPA post graduate courses and is a member of the New Zealand Society of Physiotherapists (NZSP)&lt;br>&lt;br> &lt;b>Speciality Areas:&lt;/b>&lt;br> • Trigger point dry needling&lt;br> • Post-operative rehabilitation&lt;br> • Acute and chronic injury rehabilitation&lt;br> • Exercise prescription&lt;br> • Manual Therapy&lt;br> • Massage therapy&lt;br></string>
+    <string name="profile_Bryce_Ebben">&lt;b>Bryce Ebben&lt;/b>&lt;br>&lt;br> &lt;b>Location: Majestic Centre, Wellington&lt;/b>&lt;br>&lt;br> &lt;b>Qualifications&lt;/b>&lt;br> • Bachelor of Health Science Physiotherapy&lt;br> AUT University &lt;br> • Post Graduate Certificate in Acupunture&lt;br> AUT University &lt;br>&lt;br> &lt;b>Professional Experience:&lt;/b>&lt;br> • Experienced in Musculoskeletal, Orthopaedic and Sports Physiotherapy. &lt;br> • Member of the New Zealand Society of Physiotherapists MNZSP, NZRP &lt;br> • Clinical management experience &lt;br> • Auckland University of Technology Clinical Educator &lt;br> • New Zealand team physiotherapist to the Youth Olympics, World University games, FIBA Basketball World Championships &lt;br> • Team Physiotherapist to the New Zealand NBL (Basketball) and Auckland NPC Netball teams. &lt;br> • National and Premier Physiotherapist to Basketball, Netball, Football, Rugby, Lacrosse and Rugby Sevens&lt;br> • Acute injury management&lt;br>&lt;br> &lt;b>Speciality Areas: &lt;/b> &lt;br> • Acupuncture &lt;br> • Sports injuries and rehabilitation &lt;br> • Pre and post surgical rehabilitation &lt;br> • Exercise prescription &lt;br> • Manual therapy &lt;br> • Bio-mechanical assessment and injury prevention &lt;br> • Spinal rehabilitation &lt;br> • Strapping and sports taping &lt;br> • Massage &lt;br></string>
+    <string name="profile_Ben_Teusse">&lt;b>Ben Teusse &lt;/b>&lt;br>&lt;br> &lt;b>Location: Johnston Street, Wellington&lt;/b>&lt;br>&lt;br> &lt;b>Qualifications&lt;/b>&lt;br> • MHPrac - Masters of Health Practice in Musculoskeletal Physiotherapy (with distinction)&lt;br> • BPHTY - Bachelor of Physiotherapy&lt;br> • MNZSP, MNZMPA, MNZCP, NZRP&lt;br>&lt;br> &lt;b>Professional Experience:&lt;/b>&lt;br> Ben has extensive experience in musculoskeletal and manipulative treatment, sports injuries and performance, corporate health and lifestyle management with over 10 years experience working within the rehabilitation and health + fitness field. He has a Masters degree (with distinction) in Musculoskeletal Physiotherapy and has a strong interest in the rehabilitation of back and shoulder injuries, including the management of chronic pain. Ben co-ordinates our rehabilitation programmes and splits his time between our four clinics, assessing complex injuries and assisting our physiotherapy team when needed.&lt;br></string>
+    <string name="profile_Aaron_Searle">&lt;b>Aaron Searle&lt;/b>&lt;br>&lt;br> &lt;b>Location: Johnston Street, Wellington&lt;/b>&lt;br>&lt;br> &lt;b>Qualifications&lt;/b>&lt;br> • Bachelor of Physical Education&lt;br> Otago University&lt;br> Majors in Sport &amp; Exercise Science and Exercise Prescription &amp; Management&lt;br> • Bachelor of Physiotherapy&lt;br> Otago University&lt;br>&lt;br> &lt;b>Professional Experience:&lt;/b>&lt;br> • 9 Years in the health and fitness industry – physiotherapy, personal training, shoe/foot analysis and running programming&lt;br> • Experienced Musculoskeletal Physiotherapist&lt;br> • Member of the New Zealand Manipulative Physiotherapy Association (NZMPA)&lt;br> • Member of the New Zealand Society of Physiotherapists (NZSP)&lt;br> • 2 years as Clinic Manager at Johnston Street, Wellington&lt;br>&lt;br> &lt;b>Speciality Areas&lt;/b>&lt;br> • Acute and Chronic Rehabilitation&lt;br> • Sports Specific Rehabilitation&lt;br> • Running Biomechanics and Foot wear analysis&lt;br> • Workplace Assessment and Ergonomics&lt;br> • Massage Therapy&lt;br> • Personal Trainer&lt;br></string>
+    <string name="profile_Cam_Walsh">&lt;b> Cam Walsh&lt;/b>&lt;br>&lt;br> &lt;b>Location: Johnston Street &amp; Evans Bay, Wellington&lt;/b>&lt;br>&lt;br> &lt;b>Qualifications&lt;/b>&lt;br> • Bachelor of Physiotherapy (BPHTY)&lt;br> Otago University&lt;br>&lt;br> &lt;b>Professional Experience:&lt;/b>&lt;br> • 6 years experience in sports medicine and rehabilitation for various sports&lt;br> • Member of the New Zealand Manipulative Physiotherapy Association (NZMPA)&lt;br> • Member of the New Zealand Society of Physiotherapists (NZSP)&lt;br> • Head Physiotherapist for MSP Premier Rugby – Assistant for provincial representative sides&lt;br> • Completed NZMPA Post graduate weekend courses and Sports Medicine courses&lt;br>&lt;br> &lt;b>Speciality Areas&lt;/b>&lt;br> • Manual, hands on Physiotherapy with manipulative techniques&lt;br> • Biomechanical analysis of running and walking using video tools&lt;br> • Return to work planning and rehabilitation including Workplace Assessments&lt;br> • Sport specific training and rehabilitation&lt;br> • Postural assessment and treatment of biomechanical issues&lt;br> • Gym specific functional training&lt;br></string>
+    <string name="profile_Holly_McCabe">&lt;b>Holly McCabe &lt;/b>&lt;br>&lt;br> &lt;b>Location: Johnston Street, Wellington&lt;/b>&lt;br>&lt;br> &lt;b>Qualifications&lt;/b>&lt;br> • Otago University&lt;br> Bachelor of Physiotherapy &lt;br>&lt;br> &lt;b>Professional Experience:&lt;/b>&lt;br> • Undergraduate experience in musculoskletal, cardiorespiratory, neurorehabilitation and hospital settings&lt;br> • Member of NZSP and NZMPA&lt;br>&lt;br> &lt;b>Speciality Areas&lt;/b>&lt;br> • Sports injuries &lt;br> • Acute and chronic injury rehabilitation &lt;br> • Massage therapy &lt;br> • Exercise prescription &lt;br> • Sports taping&lt;br></string>
+    <string name="profile_Nicholas_Clode">&lt;b>Nicholas Clode &lt;/b>&lt;br>&lt;br> &lt;b>Location: Johnston Street, Wellington&lt;/b>&lt;br>&lt;br> &lt;b>Qualifications&lt;/b>&lt;br> • BSc (hons) Physiotherapy&lt;br> Manchester Metropolitan University. UK&lt;br> • BSc (hons) Sports science with HRM&lt;br> Coventry University&lt;br> • Currently completing an MSc in Musculoskeletal Physiotherapy&lt;br> Manchester Metropolitan University, UK&lt;br>&lt;br> &lt;b>Professional Experience:&lt;/b>&lt;br> • Experience working as a Physiotherapist in the NHS, private practice and a private hospital in the UK&lt;br> • Post graduate certificate in Orthopaedic medicine&lt;br> • Member of the Chartered Society of Physiotherapy&lt;br> • Previously sat on the learning &amp; development committee and continuing professional development panel at the Chartered Society of Physiotherapy, UK&lt;br>&lt;br> &lt;b>Speciality Areas&lt;/b>&lt;br> • Exercise therapy&lt;br> • Orthopaedic medicine&lt;br> • Vocational rehabilitation&lt;br> • Rehabilitation post surgery&lt;br> • Acupuncture &lt;br> • Massage&lt;br> • Acute and chronic injury rehabilitation&lt;br></string>
+    <string name="profile_Jacqui_Farr">&lt;b>Jacqui Farr&lt;/b>&lt;br>&lt;br> &lt;b>Location: Evans Bay, Wellington&lt;/b>&lt;br>&lt;br> &lt;b>Qualifications&lt;/b>&lt;br> • Diploma in Physiotherapy&lt;br> Otago University&lt;br>&lt;br> &lt;b>Professional Experience:&lt;/b>&lt;br> • 24 years experience as a physiotherapist in New Zealand, Canada and the United Kingdom&lt;br> • Experienced with all age groups in a variety of settings including private practices, hospitals and sports clinics&lt;br> • Extensive experience with sports teams and individual sports people, from the recreational to the elite athlete&lt;br> • Member of the New Zealand Society of Physiotherapy&lt;br> • Member of the New Zealand Manipulative Physiotherapists Association&lt;br>&lt;br> &lt;b>Speciality Areas&lt;/b>&lt;br> • Peripheral and spinal acute and chronic physiotherapy treatment and rehabilitation&lt;br> • Sports specific treatment and rehabilitation&lt;br> • Postural and biomechanical assessment and treatment&lt;br> • Rehabilitation back to occupational and leisure-time activities&lt;br> • Therapeutic massage&lt;br></string>
+    <string name="profile_Gemma_Roberts">&lt;b> Gemma Roberts&lt;/b>&lt;br> &lt;b>Location: Majestic &amp; Evans Bay, Wellington&lt;/b>&lt;br>&lt;br> &lt;b>Qualifications&lt;/b>&lt;br> • Bachelor of Health Science Physiotherapy&lt;br> AUT University &lt;br> • Post Graduate Diploma in Acupuncture&lt;br> AUT University &lt;br>&lt;br> &lt;b>Professional Experience:&lt;/b>&lt;br> • Experienced Musculoskeletal Physiotherapist &lt;br> • Member of New Zealand Society of Physiotherapists (NZSP)&lt;br> • Member of the New Zealand Manipulative Physiotherapy Association (NZMPA)&lt;br> • Member Physiotherapy Acupuncture Association of New Zealand (PAANZ)&lt;br> • 3 Years international experience in England and Ireland including working with Gaelic Football and Hurling Teams.&lt;br>&lt;br> &lt;b>Speciality Areas&lt;/b>&lt;br> • Acute and Chronic Injury Rehabilitation&lt;br> • Manual Therapy&lt;br> • Acupuncture&lt;br> • Sports injuries&lt;br> • Spinal Rehabilitaion including Clinical Pilates&lt;br> • Pre and Post Operative Rehabilitation&lt;br> • Exercise Prescrption&lt;br> • Massage Therapy&lt;br> • Strapping&lt;br></string>
+    <string name="profile_Mark_Arenhold">&lt;b> Mark Arenhold&lt;/b>&lt;br>&lt;br> &lt;b>Location: Auckland&lt;/b>&lt;br>&lt;br> &lt;b>Qualifications&lt;/b>&lt;br> • BHSc (Physiotherapy)&lt;br> • Member of New Zealand Society of Physiotherapists (NZSP)&lt;br> • Member of New Zealand Manipulative Physiotherapists Association (NZMPA)&lt;br> • Currently completing a Masters degree in Musculoskeletal Physiotherapy&lt;br>&lt;br> &lt;b>Professional Experience:&lt;/b>&lt;br> • Experienced Musculoskeletal Physiotherapist from Auckland University of Technology.&lt;br> • Sports Physiotherapy - Auckland rugby league.&lt;br>&lt;br> &lt;b>Speciality Areas&lt;/b>&lt;br> • General sports injuries&lt;br> • Manual therapy&lt;br> • Acute and chronic injury rehabilitation&lt;br> • Western Acupuncture&lt;br> • Personal Training&lt;br></string>
+    <string name="profile_Jonny_Mckee">&lt;b>Jonny Mckee&lt;/b>&lt;br>&lt;br> &lt;b>Location: Auckland&lt;/b>&lt;br>&lt;br> &lt;b>Qualifications&lt;/b>&lt;br> • BSc (Hons) Physiotherapy&lt;br> • Member of New Zealand Society of Physiotherapists (NZSP)&lt;br> • Member of New Zealand Manipulative Physiotherapists Association (NZMPA)&lt;br> • Currently completing Masters in Musculoskeletal Physiotherapy&lt;br>&lt;br> &lt;b>Professional Experience:&lt;/b>&lt;br> Jonny has 9 years post graduate experience working as a physiotherapist in Northern Ireland and New Zealand mainly specialising in musculoskeletal injuries.&lt;br> He is currently completing a post grad diploma in musculoskeletal physiotherapy at AUT. A keen runner, Jonny has represented Northern Ireland at international cross country events as well as winning Auckland titles at 5km, 10km and half marathon.&lt;br>&lt;br> &lt;b>Speciality Areas&lt;/b>&lt;br> • Manual therapy&lt;br> • Sports injuries&lt;br> • Biomechanical and muscle imbalance assessments&lt;br> • Running Programmes&lt;br></string>
+    <string name="profile_Emma_Lothian">&lt;b> Emma Lothian &lt;/b>&lt;br>&lt;br> &lt;b>Location: Auckland&lt;/b>&lt;br>&lt;br> &lt;b>Qualifications&lt;/b>&lt;br> • Bachelor of Health Science in Physiotherapy&lt;br> AUT University&lt;br> • Bachelor of Science in Sport &amp; Exercise Science:&lt;br> University of Auckland&lt;br> • Member of the New Zealand Society of Physiotherapists&lt;br> (NZSP)&lt;br>&lt;br> &lt;b>Professional Experience:&lt;/b>&lt;br> Emma has worked as a Physiotherapist at Middlemore Hospital gaining experience in the areas of medical cardiorespiratory, general surgery (ICU &amp; HDU), orthopaedics &amp; neurological rehabilitation. Emma has experience teaching both Mat &amp; Reformer Pilates from a physiotherapy perspective, along with experience in exercise prescription &amp; one-on-one training.&lt;br> A keen sports person, Emma has represented New Zealand in Ultimate Frisbee &amp; age grade Soccer.&lt;br>&lt;br> &lt;b>Speciality Areas&lt;/b>&lt;br> • Injury prevention &amp; management&lt;br> • Manual therapy&lt;br> • Sport specific training and rehabilitation&lt;br> • Core strengthening &amp; Pilates rehabilitation&lt;br> • Personal Training&lt;br> • Post-surgical rehabilitation&lt;br> • Massage therapy&lt;br></string>
+    <string name="no_video">Video does not exist!</string>
+    <string name="can_not_play_video">Can not play the video file!</string>
+    <string name="club">Club</string>
+    <string name="view_map">View Map</string>
+    <string name="location_Habit_Majestic_Wellington">Majestic Centre&lt;br> Level P2, 100 Willis st&lt;br> Wellington City&lt;br> View Map</string>
+    <string name="phone_Habit_Majestic_Wellington">P 04 499 9940</string>
+    <string name="fax_Habit_Majestic_Wellington">F 04 499 9942</string>
+    <string name="location_Habit_Johnston_St_Wellington">Level 1&lt;br> 24 Johnston St&lt;br> Wellington City&lt;br></string>
+    <string name="phone_Habit_Johnston_St_Wellington">P 04 499 9037</string>
+    <string name="fax_Habit_Johnston_St_Wellington">P 04 499 9043</string>
+    <string name="location_Habit_Kilbirnie_Wellington">Cobham Drive Retail Centre&lt;br> 50 Tacy St Kilbirnie&lt;br> Wellington City&lt;br></string>
+    <string name="phone_Habit_Kilbirnie_Wellington">P 04 387 2888</string>
+    <string name="fax_Habit_Kilbirnie_Wellington">F 04 387 3171</string>
+    <string name="location_Habit_Vero_Centre_Auckland">Lower Lobby, 48 Shortland St&lt;br> Auckland City&lt;br></string>
+    <string name="phone_Habit_Vero_Centre_Auckland">P 09 357 6301</string>
+    <string name="fax_Habit_Vero_Centre_Auckland">F 09 309 6301</string>
+    <string name="location_Habit_The_Viaduct_Auckland">Level 1&lt;br> 136 Customs St West&lt;br> Auckland City&lt;br></string>
+    <string name="phone_Habit_The_Viaduct_Auckland">P 09 369 5100</string>
+    <string name="fax_Habit_The_Viaduct_Auckland">null</string>
+    <string name="location_Habit_Upper_Hutt">Upper Hutt Health Centre&lt;br> Queens St Car Park&lt;br> Upper Hutt&lt;br></string>
+    <string name="phone_Habit_Upper_Hutt">P 04 528 0749</string>
+    <string name="fax_Habit_Upper_Hutt">null</string>
+    <string name="location_Habit_Petone">Bodyright Pilates&lt;br> 16 Union Street&lt;br> Petone&lt;br></string>
+    <string name="phone_Habit_Petone">P 04 568 9944</string>
+    <string name="fax_Habit_Petone">null</string>
+    <string name="location_Habit_Paraparaumu">Bodyright Pilates&lt;br> 17 Ihakara Street&lt;br> Paraparaumu&lt;br></string>
+    <string name="phone_Habit_Paraparaumu">P 04 298 6491</string>
+    <string name="fax_Habit_Paraparaumu">null</string>
+    <string name="call_title">Call Warning!</string>
+    <string name="call_message">Would you like to call 
+ %1$s ?</string>
+    <string name="facebook">FaceBook</string>
+    <string name="twitter">Twitter</string>
+    <string name="share_facebook_title">Share to FaceBook</string>
+    <string name="share_twitter_title">Share to Twitter</string>
+    <string name="share_email_title">Share to Email</string>
+    <string name="share_message">Would you like to share this application to %1$s ?</string>
+    <string name="share_app">Share the App</string>
+    <string name="not_log_in">You have not logged in !</string>
+    <string name="log_in">You have logged in !</string>
+    <string name="share">Share</string>
+    <string name="to">to</string>
+    <string name="comment">Comment</string>
+    <string name="share_lowercase">share</string>
+    <string name="log_error_colon">Log error:</string>
+    <string name="facebook_share_info">
+    Cashman Physio Ph Ph 04 4723698 gave me this free App, it reminds me to do my rehab exercise. Download it for free just Search for “ Cashman Physio” on Google play or App store 
+Cashman Physiotherapy  is at Level 1 50 The Terrace, which can be found behind The Vector Building, 44 The Terrace, Wellington. We are open Monday to Friday with appointments available from 7.30 am to 4.45 pm.
+We also have a satellite clinic that operates out of 52 Northland Rd Tuesday and Thursday afternoons from 2.30 to 6 pm
+http://www.cashmanphysio.co.nz/
+	</string>
+    <string name="twitter_share_info">Cashman Physio Ph 04 4723698 gave me this free App, it reminds me to do my rehab exercise. Search for ”CashmanPhysio” on Google play or App store
+</string>
+    <string name="email_share_info">Cashman Physiotherapy Ph 04 4723698 gave me this free App, it reminds me to do my rehab exercise. Download it for free just search for “Cashman Physio” on Google play or App store 
+Cashman Physiotherapy is at Level 1 50 The Terrace, which can be found behind The Vector Building, 44 The Terrace, Wellington. We are open Monday to Friday with appointments available from 7.30 am to 4.45 pm.  
+We also have a satellite clinic that operates out of 52 Northland Rd Tuesday and Thursday afternoons from 2.30 to 6 pm \n \n
+http://www.cashmanphysio.co.nz/
+</string>
+    <string name="text_share_info">Cashman Physio Ph 04 4723698 gave me this free App, it reminds me to do my rehab exercise. Search for “Cashman Physio” on Goole play or App store 
+</string>
+    <string name="exception">Exception:</string>
+    <string name="facebook_error">Facebook Error:</string>
+    <string name="share_success_title">Share Success!</string>
+    <string name="share_facebook_success_message">You have shared this application to Facebook!</string>
+    <string name="facebook_not_login_title">Login Warning!</string>
+    <string name="facebook_not_login_message">You have not logged in Facebook, and can not share this application!</string>
+    <string name="twitter_not_login_message">You have not logged in Twitter, and can not share this application!</string>
+    <string name="network_title">Network Waring!</string>
+    <string name="network_message">The network is unavailable !</string>
+    <string name="share_to">Share to</string>
+    <string name="share_twitter_success_message">You have shared this application to Twitter!</string>
+    <string name="share_fail_title">Share Failed!</string>
+    <string name="share_facebook_fail_message">Fail to share to Facebook!</string>
+    <string name="share_twitter_fail_message">Fail to share to Twitter!</string>
+    <string name="username">username or email</string>
+    <string name="password">password</string>
+    <string name="caption">caption</string>
+    <string name="username_input_title">UserName Input Warning!</string>
+    <string name="username_input_message">The username can not be empty!</string>
+    <string name="password_input_title">Password Input Warning!</string>
+    <string name="password_input_message">The password can not be empty!</string>
+    <string name="remeber_me">Remember Me</string>
+    <string name="email">Email</string>
+    <string name="email_address">email address</string>
+    <string name="email_subject_default">Cashman Physiotherapy</string>
+    <string name="email_subject">email subject</string>
+    <string name="email_body">body</string>
+    <string name="email_alert_title">Email Warning!</string>
+    <string name="email_alert_message">The email address is invalid, please check it!</string>
+    <string name="compose_tweet">Compose new Tweet</string>
+    <string name="authorize_canceled">Authorize canceled !</string>
+    <string name="twitter_error_colon">Twitter Error:</string>
+    <string name="authorize_fail_title">Authorize Failed !</string>
+    <string name="pls_wait">Please wait...</string>
+    <string name="sharing">Sharing...</string>
+    <string name="uncaught_exception">The application catches unknown exception,and crashes</string>
+    <string name="authorize_fail_message">Your account authorize failed !</string>
+    <string name="error_report_title">Error report</string>
+    <string name="error_report_message">This Application got unexpected Errors last time, Do you want to send the crush log to Habit, we will do better...</string>
+    <string name="error_report_email">838085871@qq.com</string>
+    <string name="crash_log_email_subject">crash log of Habit alarm version 1 on Android client</string>
+    <string name="business_name_colon">Business Name:</string>
+    <string name="phone_colon">Phone:</string>
+    <string name="email_colon">Email:</string>
+    <string name="call_uppercase">CALL</string>
+    <string name="email_uppercase">EMAIL</string>
+    <string name="goal">Goal</string>
+    <string name="date_to_complete">Date to Complete</string>
+    <string name="phone_call_message">Would you like to call
+ %1$s ?</string>
+    <string name="phone_call_title">Phone Call !</string>
+    <string name="email_send_message">Would you like to email
+ %1$s ?</string>
+    <string name="phone_number_error_message">The phone number is invalid,please check it !</string>
+    <string name="phone_number_error_title">Number Error !</string>
+    <string name="email_app_title">Cashman Physiotherapy</string>
+    <string name="phone_number">phone number</string>
+    <string name="message_body">message</string>
+    <string name="send_message_title">SMS Message</string>
+    <string name="send_message_message">"Would you like to send message to
+ %1$s ?"</string>
+    <string name="send">send</string>
+    <string name="text">Text</string>
+    <string name="send_successfully">Send Successfully!</string>
+    <string name="send_fail">Send Failed!</string>
+    <string name="send_fail_message">"It is failed to send the message to
+ %1$s !"</string>
+    <string name="sim_state_title">Sim card Waring!</string>
+    <string name="sim_state_message">The Sim card of this phone is not ready, please check it!</string>
+    <string name="physio_name_colon">Physiotherapist Name:</string>
+    <string name="on">On</string>
+    <string name="at">At</string>
+    <string name="backText">&lt;&lt; Back</string>
+<string name="profile_is_before_notify_title">Remind me 1hr before appointment</string>
+<string name="contact_info"> Mon-Fri 7.30 am to 5pm </string>
+<string name="contact_info2">Tues &#38;  Thursday 2-6pm</string>
+<string name="contact_address">&lt;b>Level 1&lt;br/>
+50 The Terrace &lt;br/>
+Wellington&lt;br/>&lt;/b>
+(Behind 44 The Terrace)</string>
+ <string name="contact_address_two">&lt;b>52 Northland Rd  &lt;br/>
+Northland &lt;/b></string>
+<string name="about_us_content">Cashman Physiotherapy was founded 20 years ago on The Terrace by Rob Cashman specialising in Sports and Spinal therapy.   &lt;br/>  &lt;br/>
+As well as Rob Cashman we have three other very experience staff, Loralee Reid, Alistair Fergus and Liam MacLachlan, who between them can cater for any type of injury you may have; we have large, private treatment rooms and the best selection of magazines in town though as we endeavour to see our clients at their appointment time, the chances of you being able to read them are somewhat slim.
+ &lt;br/> &lt;br/>	
+Half an hour is allocated for an initial assessment and generally 15 minute for any further appointments and our clinic is open Monday to Friday from 7.30 through to 5 pm.  &lt;br/>&lt;br/>
+For pricing please refer to our website www.cashmanphysio.co.nz 
+&lt;br/>&lt;br/>
+Clinics opening hours&lt;br/>&lt;br/>
+Mon-Fri 8:00 am to 5:00 pm &lt;br/>&lt;br/>
+Saturday clinics by appointment only&lt;br/>&lt;br/>
+</string>
+<string name="about_us_content_next">Northcross Physiotherapy and Rehabilitation is situated on Aucklands North Shore in the Northcross Specialist Centre at 950 East Coast Rd, Northcross. The fully air-conditioned building is shared with a dentist and an orthodontist. Access to the premises is via entrances on both East Coast Road and Oteha Valley Road. There are a total of twenty parking spaces including two for disabled persons. The car park is linked to that of the neighbouring Shore Care Facility allowing for over-flow of parking to and from each of the neighbouring premises.</string>
+</resources>

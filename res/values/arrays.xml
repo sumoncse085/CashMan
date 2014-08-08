@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="weekday_selection">
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+    </string-array>
+    <string-array name="weekday_selection_short">
+        <item>Sun</item>
+        <item>Mon</item>
+        <item>Tue</item>
+        <item>Wed</item>
+        <item>Thur</item>
+        <item>Fri</item>
+        <item>Sat</item>
+    </string-array>
+    <string-array name="action_alarm_item_click">
+        <item>Configure</item>
+        <item>View</item>
+        <item>Edit</item>
+        <item>Delete</item>
+    </string-array>
+    <string-array name="location_list">
+        <item>Majestic Wellington</item>
+        <item>Johnston St Wellington</item>
+        <item>Kilbirnie Wellington</item>
+        <item>Vero Centre Auckland</item>
+        <item>The Viaduct Auckland</item>
+        <item>Upper Hutt</item>
+        <item>Petone</item>
+        <item>Paraparaumu</item>
+    </string-array>
+    <string-array name="role_list">
+        <item>Doctor</item>
+        <item>Physiotherapist</item>
+        <item>Chiropractor</item>
+        <item>Podiatrists</item>
+        <item>Trainer</item>
+        <item>Specialist</item>
+         <item>Massage</item>
+        <item>Reception</item>
+        <item>Nutritionist</item>
+        <item>Naturopath</item>
+    </string-array>
+    <string-array name="name_group_list">
+        <item>Wellington- Majestic Centre</item>
+        <item>Wellington- Johnston St</item>
+        <item>Wellington Evans Bay</item>
+        <item>Auckland- Vero Centre</item>
+        <item>Trainers Wellington</item>
+        <item>Trainers Auckland</item>
+    </string-array>
+    <string-array name="name_list_Wellington_Majestic_Centre">
+        <item>Naomi Faulknor</item>
+        <item>Penny Holman</item>
+        <item>Zak Nichols</item>
+        <item>Philip Guthrie</item>
+        <item>Bryce Ebben</item>
+    </string-array>
+    <string-array name="name_list_Wellington_Johnston_St">
+        <item>Ben Teusse</item>
+        <item>Aaron Searle</item>
+        <item>Cam Walsh</item>
+        <item>Holly McCabe</item>
+        <item>Nicholas Clode</item>
+    </string-array>
+    <string-array name="name_list_Wellington_Evans_Bay">
+        <item>Cam Walsh</item>
+        <item>Jacqui Farr</item>
+    </string-array>
+    <string-array name="name_list_Auckland_Vero_Centre">
+        <item>Mark Arenhold</item>
+        <item>Jonny McKee</item>
+        <item>Emma Lothian</item>
+    </string-array>
+    <string-array name="name_list_Trainers_Wellington">
+        <item>Dean White</item>
+        <item>Tim Cahill</item>
+        <item>Lee Spence</item>
+        <item>Kelly Johnston</item>
+        <item>Tracey Fleming</item>
+        <item>Ian Clarke</item>
+        <item>Dustin Bouzaid</item>
+        <item>Josh Stevens</item>
+        <item>Kieran O’Rourke</item>
+    </string-array>
+    <string-array name="name_list_Trainers_Auckland">
+        <item>Andrew Smids</item>
+        <item>Sam Trafford</item>
+        <item>Alec Duncan</item>
+        <item>Cesar Zereu Filho</item>
+        <item>Nadia Jooste</item>
+        <item>Richard Bruce</item>
+        <item>Conor Daly</item>
+    </string-array>
+    <string-array name="staff_group_list">
+        <item>Wellington- Majestic Centre</item>
+        <item>Wellington- Johnston St</item>
+        <item>Wellington Evans Bay</item>
+        <item>Auckland- Vero Centre</item>
+    </string-array>
+    <string-array name="staff_list_Wellington_Majestic_Centre">
+        <item>Naomi Faulknor</item>
+        <item>Penny Holman</item>
+        <item>Zak Nichols</item>
+        <item>Philip Guthrie</item>
+        <item>Bryce Ebben</item>
+    </string-array>
+    <string-array name="staff_list_Wellington_Johnston_St">
+        <item>Ben Teusse</item>
+        <item>Aaron Searle</item>
+        <item>Cam Walsh</item>
+        <item>Holly McCabe</item>
+        <item>Nicholas Clode</item>
+    </string-array>
+    <string-array name="staff_list_Wellington_Evans_Bay">
+        <item>Cam Walsh</item>
+        <item>Jacqui Farr</item>
+        <item>Gemma Roberts</item>
+    </string-array>
+    <string-array name="staff_list_Auckland_Vero_Centre">
+        <item>Mark Arenhold</item>
+        <item>Jonny McKee</item>
+        <item>Emma Lothian</item>
+    </string-array>
+    <string-array name="club_list">
+        <item>Habit Majestic Wellington</item>
+        <item>Habit Johnston St Wellington</item>
+        <item>Habit Kilbirnie Wellington</item>
+        <item>Habit Vero Centre Auckland</item>
+        <item>Habit The Viaduct Auckland</item>
+        <item>Habit Upper Hutt</item>
+        <item>Habit Petone</item>
+        <item>Habit Paraparaumu</item>
+    </string-array>
+</resources>

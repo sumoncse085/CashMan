@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/head" />
+    <EditText android:gravity="top" android:id="@+id/edit_alarm_instruction" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/alarm_instruction_hint" android:layout_weight="1.0" />"
+</LinearLayout>
