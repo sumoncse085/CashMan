@@ -34,6 +34,8 @@ import android.widget.VideoView;
 
 import com.cashman.physio.v1.android.alarm.AlarmApplication;
 import com.cashman.physio.v1.android.alarm.R;
+import com.cashman.physio.v1.android.alarm.activity.MainActivity;
+import com.cashman.physio.v1.android.alarm.activity.profile.AppointmentAlarmActivity;
 import com.cashman.physio.v1.android.alarm.data.AlarmItem;
 import com.cashman.physio.v1.android.alarm.data.Constant;
 import com.cashman.physio.v1.android.alarm.util.LocalLog;
@@ -70,6 +72,14 @@ public class ExerciseReachActivity extends Activity {
 		setRingtoneVolume(0);
 		initViews();
 	}
+
+	
+//	@Override
+//	public void onBackPressed() {
+//		// TODO Auto-generated method stub
+//		//super.onBackPressed();
+//		
+//	}
 
 	private void initViews() {
 		mTextView_Name = (TextView) findViewById(R.id.tv_name);
@@ -108,6 +118,9 @@ public class ExerciseReachActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
+				finish();
+				Intent intent=new Intent(ExerciseReachActivity.this, MainActivity.class);
+				startActivity(intent);
 				finish();
 			}
 		});
@@ -400,30 +413,38 @@ public class ExerciseReachActivity extends Activity {
 		updateAlarm();
 	}
 
-	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if (keyCode == KeyEvent.KEYCODE_BACK) {
-			if (mRingtone != null && mRingtone.isPlaying()) {
-				mRingtone.stop();
-			}
-			mRingtone = null;
-			System.gc();
-
-			if (mVibrator != null) {
-				mVibrator.cancel();
-				mVibrator = null;
-				System.gc();
-			}
-
-			finish();
-		}else if(keyCode == KeyEvent.KEYCODE_VOLUME_UP){
-			setRingtoneVolume(1);
-		}else if(keyCode == KeyEvent.KEYCODE_VOLUME_DOWN){
-			setRingtoneVolume(-1);
-		}
-
-		return true;
-	}
+//	@Override
+//	public boolean onKeyDown(int keyCode, KeyEvent event) {
+//	     if (keyCode == KeyEvent.KEYCODE_BACK) {
+//	     //preventing default implementation previous to android.os.Build.VERSION_CODES.ECLAIR
+//	     return true;
+//	     }
+//	     return super.onKeyDown(keyCode, event);    
+//	}
+//	@Override
+//	public boolean onKeyDown(int keyCode, KeyEvent event) {
+//		if (keyCode == KeyEvent.KEYCODE_BACK) {
+//			if (mRingtone != null && mRingtone.isPlaying()) {
+//				mRingtone.stop();
+//			}
+//			mRingtone = null;
+//			System.gc();
+//
+//			if (mVibrator != null) {
+//				mVibrator.cancel();
+//				mVibrator = null;
+//				System.gc();
+//			}
+//
+//			finish();
+//		}else if(keyCode == KeyEvent.KEYCODE_VOLUME_UP){
+//			setRingtoneVolume(1);
+//		}else if(keyCode == KeyEvent.KEYCODE_VOLUME_DOWN){
+//			setRingtoneVolume(-1);
+//		}
+//
+//		return true;
+//	}
 
 	private void updateAlarm() {
 		AlarmApplication.appInstance.startAlarm();

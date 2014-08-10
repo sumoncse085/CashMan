@@ -37,6 +37,7 @@ import com.cashman.physio.v1.android.alarm.receiver.AlarmReceiver;
 import com.cashman.physio.v1.android.alarm.util.LocalLog;
 import com.cashman.physio.v1.android.alarm.util.PreferencesTool;
 import com.cashman.physio.v1.android.alarm.util.ProfileNotify;
+import com.commonsware.cwac.wakeful.WakefulIntentService;
 
 public class ProfileActivity extends Activity implements View.OnClickListener, OnCheckedChangeListener {
 	private static final int FLAG_DUE = Constant.Profile.FLAG_DUE;
@@ -541,7 +542,8 @@ public class ProfileActivity extends Activity implements View.OnClickListener, O
 		int dayofmonth=Integer.parseInt(date.substring(8, 10));
 		int hour=Integer.parseInt(time.substring(0, 2));
 		int min=Integer.parseInt(time.substring(3, 5));
-		
+		time=time.replace("P", "p");
+		time=time.replace("M", "m");
 		if(time.contains("pm")){
 			if(hour!=12){
 				hour+=12;	
@@ -580,13 +582,18 @@ public class ProfileActivity extends Activity implements View.OnClickListener, O
 		//calendar.set(Calendar.AM_PM,Calendar.AM);
 		Log.e("after", ""+startTime);
 		if(startTime-currenttime>60*60*1000){
+//			AppListener lisenar=new AppListener(startTime);
+//			//lisenar.scheduleAlarms(mgr, pi, ctxt)
+//			WakefulIntentService.scheduleAlarms(lisenar,
+//                    this, false);
+		
 			startTime-=60*60*1000;
 			Intent myIntent = new Intent(ProfileActivity.this, AlarmReceiver.class);
 			myIntent.putExtra("appoinmentalarm", true);
-			PendingIntent pendingIntent = PendingIntent.getBroadcast(ProfileActivity.this, 0, myIntent,PendingIntent.FLAG_CANCEL_CURRENT);
-
+			PendingIntent pendingIntent = PendingIntent.getBroadcast(ProfileActivity.this, 1, myIntent,PendingIntent.FLAG_UPDATE_CURRENT);
+			
 			AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
-			alarmManager.set(AlarmManager.RTC,startTime, pendingIntent);
+			alarmManager.set(AlarmManager.RTC_WAKEUP,startTime, pendingIntent);
 	}
 		
 	}

@@ -331,7 +331,7 @@
                             android:layout_marginLeft="3.0dip"
                             android:layout_weight="1"
                             android:text="11:01 AM" />
-"
+
                     </LinearLayout>
 
                     <LinearLayout

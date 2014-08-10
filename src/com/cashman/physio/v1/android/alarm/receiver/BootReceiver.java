@@ -14,6 +14,7 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -56,7 +57,8 @@ public class BootReceiver extends BroadcastReceiver {
 		int dayofmonth=Integer.parseInt(date.substring(8, 10));
 		int hour=Integer.parseInt(time.substring(0, 2));
 		int min=Integer.parseInt(time.substring(3, 5));
-
+		time=time.replace("P", "p");
+		time=time.replace("M", "m");
 		if(time.contains("pm")){
 			if(hour!=12){
 				hour+=12;	
@@ -99,10 +101,29 @@ public class BootReceiver extends BroadcastReceiver {
 			startTime-=60*60*1000;
 			Intent myIntent = new Intent(arg0, AlarmReceiver.class);
 			myIntent.putExtra("appoinmentalarm", true);
-			PendingIntent pendingIntent = PendingIntent.getBroadcast(arg0, 0, myIntent,PendingIntent.FLAG_CANCEL_CURRENT);
+			PendingIntent pendingIntent = PendingIntent.getBroadcast(arg0, 1, myIntent,PendingIntent.FLAG_UPDATE_CURRENT);
 
 			AlarmManager alarmManager = (AlarmManager)arg0.getSystemService(arg0.ALARM_SERVICE);
-			alarmManager.set(AlarmManager.RTC,startTime, pendingIntent);
+			alarmManager.set(AlarmManager.RTC_WAKEUP,startTime, pendingIntent);
+		//	alarmManager.se
+			
+			
+			
+//			AlarmManager manager = (AlarmManager) mContext.getSystemService(Context.ALARM_SERVICE);
+//			Intent intent = new Intent(mContext,AlarmReceiver.class);
+////			intent.putExtra(Constant.Alarm.Intent.KEY_RING_TIME, ringTime);
+////			intent.putExtra(Constant.Alarm.Intent.KEY_ALARM_NAME, alarm.getName());
+////			intent.putExtra(Constant.Alarm.Intent.KEY_ALARM_INSTRUCTION, alarm.getInstruction());
+////			intent.putExtra(Constant.Alarm.Intent.KEY_RINGTONE_ENABLE, alarm.isActivate());
+////			intent.putExtra(Constant.Alarm.Intent.KEY_RINGTONE_URI, alarm.getRingtoneUri());
+////			intent.putExtra(Constant.Alarm.Intent.KEY_VIBRATE_ENABLE, alarm.isVibrateEnable());
+//			Bundle bundle = new Bundle();
+//			bundle.putSerializable(Constant.Alarm.Intent.KEY_ALARM_ITEM, alarm);
+//			intent.putExtras(bundle);
+//			pIntent = PendingIntent.getBroadcast(mContext, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+//			
+//			manager.set(AlarmManager.RTC_WAKEUP, ringTime, pIntent);
+			
 		}
 	}
 

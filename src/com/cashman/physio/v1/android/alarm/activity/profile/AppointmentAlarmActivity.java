@@ -6,6 +6,7 @@ import java.util.TimerTask;
 
 import com.cashman.physio.v1.android.alarm.AlarmApplication;
 import com.cashman.physio.v1.android.alarm.R;
+import com.cashman.physio.v1.android.alarm.activity.MainActivity;
 import com.cashman.physio.v1.android.alarm.activity.exercise.ExerciseReachActivity;
 import com.cashman.physio.v1.android.alarm.activity.exercise.PlayVedioActivity;
 import com.cashman.physio.v1.android.alarm.data.AlarmItem;
@@ -15,6 +16,7 @@ import com.cashman.physio.v1.android.alarm.util.PreferencesTool;
 import com.cashman.physio.v1.android.alarm.util.RingtoneTool;
 
 import android.media.AudioManager;
+import android.media.ExifInterface;
 import android.media.MediaMetadataEditor;
 import android.media.MediaMetadataRetriever;
 import android.media.Ringtone;
@@ -87,9 +89,35 @@ public class AppointmentAlarmActivity extends Activity {
 	private int mRingtoneVolume = -2;
 	Button btn_stop;
 	private static final String TAG = "AppointmentAlarmActivity";
+	
+//	@Override
+//	public boolean onKeyDown(int keyCode, KeyEvent event) {
+//	     if (keyCode == KeyEvent.KEYCODE_BACK) {
+//	     //preventing default implementation previous to android.os.Build.VERSION_CODES.ECLAIR
+//	     return true;
+//	     }
+//	     return super.onKeyDown(keyCode, event);    
+//	}
+	@Override
+	public void onBackPressed() {
+		
+//		// TODO Auto-generated method stub
+//		//super.onBackPressed();
+//		Intent intent=new Intent(AppointmentAlarmActivity.this, MainActivity.class);
+//		startActivity(intent);
+//		finish();
+	}
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		Log.e("onresume", "onresume");
+	}
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Log.e("onCreate", "onCreate");
+
 		setContentView(R.layout.appoint_alerm_polay);
 		btn_stop=(Button) findViewById(R.id.btn_stop);
 		btn_stop.setOnClickListener(new OnClickListener() {
@@ -99,8 +127,12 @@ public class AppointmentAlarmActivity extends Activity {
 				// TODO Auto-generated method stub
 				if (mRingtone != null && mRingtone.isPlaying()) {
 					mRingtone.stop();
+					
 				}
+				Intent intent=new Intent(AppointmentAlarmActivity.this, MainActivity.class);
+				startActivity(intent);
 				finish();
+				
 			}
 		});
 		setRingtoneVolume(0);
@@ -364,30 +396,30 @@ public class AppointmentAlarmActivity extends Activity {
 		updateAlarm();
 	}
 
-	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if (keyCode == KeyEvent.KEYCODE_BACK) {
-			if (mRingtone != null && mRingtone.isPlaying()) {
-				mRingtone.stop();
-			}
-			mRingtone = null;
-			System.gc();
-
-			if (mVibrator != null) {
-				mVibrator.cancel();
-				mVibrator = null;
-				System.gc();
-			}
-
-			finish();
-		}else if(keyCode == KeyEvent.KEYCODE_VOLUME_UP){
-			setRingtoneVolume(1);
-		}else if(keyCode == KeyEvent.KEYCODE_VOLUME_DOWN){
-			setRingtoneVolume(-1);
-		}
-
-		return true;
-	}
+//	@Override
+//	public boolean onKeyDown(int keyCode, KeyEvent event) {
+//		if (keyCode == KeyEvent.KEYCODE_BACK) {
+//			if (mRingtone != null && mRingtone.isPlaying()) {
+//				mRingtone.stop();
+//			}
+//			mRingtone = null;
+//			System.gc();
+//
+//			if (mVibrator != null) {
+//				mVibrator.cancel();
+//				mVibrator = null;
+//				System.gc();
+//			}
+//
+//			finish();
+//		}else if(keyCode == KeyEvent.KEYCODE_VOLUME_UP){
+//			setRingtoneVolume(1);
+//		}else if(keyCode == KeyEvent.KEYCODE_VOLUME_DOWN){
+//			setRingtoneVolume(-1);
+//		}
+//
+//		return true;
+//	}
 
 	private void updateAlarm() {
 		AlarmApplication.appInstance.startAlarm();
