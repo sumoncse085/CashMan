@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cashman.physio.v1.android.alarm"
-    android:versionCode="2"
-    android:versionName="3.0">
+    android:versionCode="3"
+    android:versionName="3.1">
 
     <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="15" />
 
