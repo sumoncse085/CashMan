@@ -37,7 +37,6 @@ import com.cashman.physio.v1.android.alarm.receiver.AlarmReceiver;
 import com.cashman.physio.v1.android.alarm.util.LocalLog;
 import com.cashman.physio.v1.android.alarm.util.PreferencesTool;
 import com.cashman.physio.v1.android.alarm.util.ProfileNotify;
-import com.commonsware.cwac.wakeful.WakefulIntentService;
 
 public class ProfileActivity extends Activity implements View.OnClickListener, OnCheckedChangeListener {
 	private static final int FLAG_DUE = Constant.Profile.FLAG_DUE;
